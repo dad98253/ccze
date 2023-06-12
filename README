@@ -1,4 +1,4 @@
-This is CCZE, a fast log colorizer written in C, intended to be a
+This is a fork of CCZE, a fast log colorizer written in C, intended to be a
 drop-in replacement for colorize (http://colorize.raszi.hu).
 
 See the NEWS file for a description of recent changes to CCZE.
@@ -9,3 +9,45 @@ configuration. Type "man ccze" in the shell prompt.
 
 Please visit the official CCZE web page for more information. The URL
 is http://bonehunter.rulez.org/CCZE.html.
+
+====================================================================================
+This fork adds a plugin to permit the colorizing of DXSpider logs.
+At present, it colorizes the chanerr debug output. 
+
+To use it with your DXSpider server, open a DXSpider console and enter:
+
+unset/debug nologchan
+set/debug chanerr
+
+Then, log in as a normal user on a virtual consol or open an xterm window and
+enter the following:
+
+watchdbg -2 chanerr | ccze
+
+ccze will recognize the DXSpider log file format and colorize the output from watchdbg.
+If you are using a slow computer, your can slightly reduce ccze cpu workload by specifying
+the appropriate ccze plugin. There are two DXSpider plugins and you will generally want
+run with them both loaded: DXSpider and DXSpiderPCxx. Enter:
+
+watchdbg -2 chanerr | ccze --plugin=DXSpider,DXSpiderPCxx
+
+Note, As of March 2023, the watchdbg application provided with the mojo version of DXSpider
+buffers its output. Thus, if you wish to pipe its output to ccze in real time, you will need
+to make a one line change to /spider/perl/watchdbg. Near line 52, add the command
+
+STDOUT->autoflush(1);
+
+to automatically flush the standard output buffer:
+
+
+-------------------------------- perl/watchdbg --------------------------------
+index 2b1986a7..02084284 100755
+@@ -52,6 +52,7 @@ while (@ARGV) {
+ 
+ 
+ # seek to end of file
++STDOUT->autoflush(1);
+ $fh->seek(0, 2);
+ for (;;) {
+ 	my $line = $fh->getline;
+
