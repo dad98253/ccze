@@ -48,29 +48,44 @@ ccze_DXSpider_process_chan (const char *str, int *offsets, int match)
   pcre_get_substring (str, offsets, match, 2, (const char **)&direction);
   pcre_get_substring (str, offsets, match, 3, (const char **)&mtype);
   pcre_get_substring (str, offsets, match, 4, (const char **)&connection);	/* call */
-  pcre_get_substring (str, offsets, match, 5, (const char **)&protocolMnumber);	/* [PC]## */
-  pcre_get_substring (str, offsets, match, 6, (const char **)&message);  
+//  pcre_get_substring (str, offsets, match, 5, (const char **)&protocolMnumber);	/* [PC]## */
+  pcre_get_substring (str, offsets, match, 5, (const char **)&message);  
 
   ccze_addstr (CCZE_COLOR_DATE, date);
   ccze_space ();
 
-  ccze_addstr (CCZE_COLOR_PIDB, "(");
-  ccze_addstr (CCZE_COLOR_HOST, "chan");
-  ccze_addstr (CCZE_COLOR_PIDB, ")");
+  ccze_addstr (CCZE_COLOR_DEFAULT, "(");
+  ccze_addstr (CCZE_COLOR_STATIC_GREEN, "chan");
+  ccze_addstr (CCZE_COLOR_DEFAULT, ")");
   ccze_space ();
   
-  ccze_addstr (CCZE_COLOR_PID, direction);
-  ccze_space ();
-  
-  ccze_addstr (CCZE_COLOR_PROC, mtype);
-  ccze_space ();
-  
-  ccze_addstr (CCZE_COLOR_HOST, connection);
+  if ( strncmp (mtype,(char*)"I",1) == 0 ) {
+  	ccze_addstr (CCZE_COLOR_STATIC_GREEN, direction);
+  	ccze_space ();
+  	ccze_addstr (CCZE_COLOR_STATIC_GREEN, mtype);
+  	ccze_space ();
+  } else if ( strncmp (mtype,(char*)"D",1) == 0 ) {
+  	ccze_addstr (CCZE_COLOR_DATE, direction);
+  	ccze_space ();
+   	ccze_addstr (CCZE_COLOR_DATE, mtype);
+  	ccze_space ();  
+  } else if ( strncmp (mtype,(char*)"X",1) == 0 ) {
+  	ccze_addstr (CCZE_COLOR_DATE, direction);
+  	ccze_space ();
+  	ccze_addstr (CCZE_COLOR_DATE, mtype);
+  	ccze_space ();  
+  } else {
+   	ccze_addstr (CCZE_COLOR_DEFAULT, direction);
+  	ccze_space ();
+  	ccze_addstr (CCZE_COLOR_DEFAULT, mtype);
+  	ccze_space ();  
+  }
+  ccze_addstr (CCZE_COLOR_DATE, connection);
   ccze_space ();
     
 //  ccze_addstr (CCZE_COLOR_PID, "PC");
-  ccze_addstr (CCZE_COLOR_PID, protocolMnumber);
-  ccze_space ();
+//  ccze_addstr (CCZE_COLOR_PID, protocolMnumber);
+//  ccze_space ();
 
   toret = strdup (message);
 
@@ -81,7 +96,6 @@ ccze_DXSpider_process_chan (const char *str, int *offsets, int match)
   free (connection);
   free (protocolMnumber);
   free (message);
-
   return toret;
 }
 
@@ -101,13 +115,13 @@ ccze_DXSpider_process_chanerr (const char *str, int *offsets, int match)
   ccze_addstr (CCZE_COLOR_DATE, date);
   ccze_space ();
 
-  ccze_addstr (CCZE_COLOR_HOST, "(");
-  ccze_addstr (CCZE_COLOR_PIDB, "chanerr");
-  ccze_addstr (CCZE_COLOR_HOST, ")");
+  ccze_addstr (CCZE_COLOR_DEFAULT, "(");
+  ccze_addstr (CCZE_COLOR_STATIC_BOLD_RED, "chanerr");
+  ccze_addstr (CCZE_COLOR_DEFAULT, ")");
   ccze_space ();
   
-  ccze_addstr (CCZE_COLOR_PID, errortype);
-  ccze_addstr (CCZE_COLOR_HOST, ":");
+  ccze_addstr (CCZE_COLOR_STATIC_RED, errortype);
+  ccze_addstr (CCZE_COLOR_DEFAULT, ":");
   ccze_space ();
 
 
@@ -124,36 +138,75 @@ ccze_DXSpider_process_chanerr (const char *str, int *offsets, int match)
 static char *
 ccze_DXSpider_process_progress (const char *str, int *offsets, int match)
 {
-  char *date = NULL, *chanerr = NULL,  *errortype = NULL;
-  char *message = NULL;
-  char *toret;
+  char *date   = NULL, *errortype = NULL;
+  char *dxcall = NULL, *freq      = NULL, *time  = NULL, *spotter = NULL;
+  char *node   = NULL, *comment   = NULL, *route = NULL;
+  char *toret  = NULL;
   
   pcre_get_substring (str, offsets, match, 1, (const char **)&date);
-//  pcre_get_substring (str, offsets, match, 2, (const char **)&chanerr);
-  pcre_get_substring (str, offsets, match, 2, (const char **)&errortype);
-  pcre_get_substring (str, offsets, match, 3, (const char **)&message);
+  pcre_get_substring (str, offsets, match, 2, (const char **)&errortype);// SPOT
+  pcre_get_substring (str, offsets, match, 3, (const char **)&dxcall);// call
+  pcre_get_substring (str, offsets, match, 4, (const char **)&freq);// freq
+  pcre_get_substring (str, offsets, match, 5, (const char **)&time);// time
+  pcre_get_substring (str, offsets, match, 6, (const char **)&spotter);// spotter
+  pcre_get_substring (str, offsets, match, 7, (const char **)&node);// node
+  pcre_get_substring (str, offsets, match, 8, (const char **)&comment);// comment
+  pcre_get_substring (str, offsets, match, 9, (const char **)&route);// route
   
 
   ccze_addstr (CCZE_COLOR_DATE, date);
   ccze_space ();
 
-  ccze_addstr (CCZE_COLOR_HOST, "(");
-  ccze_addstr (CCZE_COLOR_PIDB, "progress");
-  ccze_addstr (CCZE_COLOR_HOST, ")");
+  ccze_addstr (CCZE_COLOR_DEFAULT, "(");
+  ccze_addstr (CCZE_COLOR_STATIC_GREEN, "progress");
+  ccze_addstr (CCZE_COLOR_DEFAULT, ")");
   ccze_space ();
   
-  ccze_addstr (CCZE_COLOR_PID, errortype);
-  ccze_addstr (CCZE_COLOR_HOST, ":");
+  ccze_addstr (CCZE_COLOR_STATIC_BOLD_RED & A_BLINK, errortype);
+  ccze_addstr (CCZE_COLOR_STATIC_RED, ":");
   ccze_space ();
 
+  ccze_addstr (CCZE_COLOR_STATIC_BOLD_GREEN, dxcall);
+  ccze_space ();
+  ccze_addstr (CCZE_COLOR_DEFAULT, "on");
+  ccze_space ();
 
-  toret = strdup (message);
+  ccze_addstr (CCZE_COLOR_STATIC_MAGENTA, freq);
+  ccze_space ();
+  ccze_addstr (CCZE_COLOR_DEFAULT, "@");
+  ccze_space ();
+
+  ccze_addstr (CCZE_COLOR_DATE, time);
+  ccze_space ();
+  ccze_addstr (CCZE_COLOR_DEFAULT, "by");
+  ccze_space ();
+
+  ccze_addstr (CCZE_COLOR_STATIC_BOLD_GREEN, spotter);
+  ccze_addstr (CCZE_COLOR_DEFAULT, "@");
+  
+  ccze_addstr (CCZE_COLOR_STATIC_BLUE, node);
+  ccze_space ();
+  
+  ccze_addstr (CCZE_COLOR_DEFAULT, "'");
+  ccze_addstr (CCZE_COLOR_PID, comment);
+  ccze_addstr (CCZE_COLOR_DEFAULT, "'");
+  ccze_space ();
+  
+  ccze_addstr (CCZE_COLOR_DEFAULT, "route:");
+  ccze_space ();
+  ccze_addstr (CCZE_COLOR_STATIC_BLUE, route);
 
   free (date);
-  free (chanerr);
+  free (dxcall);
   free (errortype);
-  free (message);
+  free (freq);
+  free (time);
+  free (spotter);
+  free (node);
+  free (comment);
+  free (route);
 
+  toret = strdup ("");
   return toret;
 }
 
@@ -162,9 +215,9 @@ ccze_DXSpider_setup (void)
 {
   const char *error;
   int errptr;
-
+//			     "\\s\\(chan\\)\\s(->|<-)\\s([IDX])\\s(\\S+)\\s(\\S+)[\\s^](.*)$", 0, &error,
   reg_DXSpider_chan = pcre_compile ("^(\\d{1,2}:\\d\\d:\\d\\d)"
-			     "\\s\\(chan\\)\\s(->|<-)\\s([IDX])\\s(\\S+)\\s(\\S+)[\\s^](.*)$", 0, &error,
+			     "\\s\\(chan\\)\\s(->|<-)\\s([IDX])\\s(\\S+)\\s(.*)$", 0, &error,
 			     &errptr, NULL);
   hints_DXSpider_chan = pcre_study (reg_DXSpider_chan, 0, &error);
   
@@ -172,9 +225,10 @@ ccze_DXSpider_setup (void)
 			     "\\s\\(chanerr\\)\\s(.*):\\s(.*)$", 0, &error,
 			     &errptr, NULL);
   hints_DXSpider_chanerr = pcre_study (reg_DXSpider_chanerr, 0, &error);
-  
+  //			     "\\s\\(progress\\)\\s(.*):\\s(.*)$", 0, &error,
   reg_DXSpider_progress = pcre_compile ("^(\\d{1,2}:\\d\\d:\\d\\d)"
-			     "\\s\\(progress\\)\\s(.*):\\s(.*)$", 0, &error,
+			     "\\s\\(progress\\)\\s(\\S+):\\s(\\S+)\\son\\s(\\S+)"
+			     "\\s@\\s(\\S+)\\sby\\s(\\S+)@(\\S+)\\s'(.*?)'\\sroute:\\s(\\S+)$", 0, &error,
 			     &errptr, NULL);
   hints_DXSpider_progress = pcre_study (reg_DXSpider_progress, 0, &error);
   
