@@ -16,6 +16,7 @@ sysconfdir	= @sysconfdir@
 bindir		= @bindir@
 mandir		= @mandir@
 man1dir		= ${mandir}/man1
+man4dir		= ${mandir}/man4
 man7dir		= ${mandir}/man7
 libdir		= @libdir@
 includedir	= @includedir@

@@ -1,0 +1,230 @@
+.\" Hey Emacs! This is -*- nroff -*-!
+.\" Original work:
+.\" Copyright (C) 2023 John Kuras <w7og@@yahoo.com>
+.\"
+.\" Permission is granted to make and distribute verbatim copies of this
+.\" manual without limitation. I.e., do what you wanty with it.
+.de Ps
+.nf
+.in +0.5i
+.ft CW
+..
+.\" Pe - end of display text
+.de Pe
+.fi
+.in -0.5i
+.ft 1
+..
+.\"
+.\" Macros added by TSS.
+.\" Nf - no fill, use constant width font
+.\" Fi - fill, restore previous font
+.\" Register Ni holds indent to use for Nf sections in points.
+.nr Ni 30
+.de Nf
+.nr OF \\n(.f
+.nr OS \\n(.s
+.ps \\n(.s-1
+.ft CW
+.in +\\n(Nip
+.nf
+..
+.de Fi
+.fi
+.ft \\n(OF
+.ps \\n(OS
+.in -\\n(Nip
+..
+.nh
+.ad l
+.TH CCZECONFIG 4 "2023-06-13" "CCZE @VERSION@" CCZE
+.SH NAME
+ ccze-config \- \fIccze\fP configuration file reference
+.SH DESCRIPTION
+.PP
+The configuration file stores system-specific or user-specific color option
+information used by the \fIccze\fP application. See the \fIccze\fP man page
+for information on where to save this file.
+.PP
+The \fIccze\fP application contains built in defaults for all color settings. There
+is no need to create a config file unless you desire to override one or more
+of the defaults.
+.PP
+.SS Components of the Configuration File
+The file can contain multiple color over-rides. Each line in the file can
+specify only one such over-ride. Lines beginning with # are treated as a comment
+and are ignored. Blank lines are also ignored.
+.PP
+A configuration line will contain two or more words separated by white space.
+The general syntax for a data line is:
+.br
+.in +\n(Nip
+.nf
+\fIitem\fP    \fI[pre attribute]\fP    \fIcolor attribute\fP    \fI[background color attribute]\fP
+.fi
+.in
+For example:
+.Nf
+date            bold cyan
+dxchan          green on_black
+getsize         magenta
+pid             bold white on_black
+.Fi
+.PP
+The item field is a keyword used by \fIccze\fP to identify a type of entry in the 
+file to be colorized. The item field is followed by a required color field that specifies
+the color to be assigned to the item's text. The permitted colors are black, red,
+green, yellow, blue, magenta, cyan, and white.
+.PP
+The color field may be prefaced by 
+an optional field used to specify additional attributes to be applied to the
+text color. The permitted preface attributes are bold, underline, underscore, blink,
+and reverse. Note that only one preface attribute is permitted. Thus, you may
+not specify both bold and blink.
+.PP
+The color field may be followed by an optional background color attribute. The
+permitted background colors are on_black, on_red, on_green, on_yellow, on_blue,
+on_magenta, on_cyan, and on_white. A color specification may include both a preface attribute and
+a background color. Thus, each specification line may contain two, three, or four
+words.
+.PP
+An item name may be used in place of the color field(s) by enclosing it in single quotes.
+.br
+.in +\n(Nip
+.nf
+.fi
+.in
+For example:
+.Nf
+date            bold cyan
+dxchan          'date'
+.Fi
+.SS Sample Configuration File
+The following sample configuration file lists the item names and built in default
+color attributes for each item used by \fIccze\fP:
+.PP
+.if n .nr Ti \n(.i
+.Nf
+.if n .in 0
+
+
+# item          color                   # comment
+
+date            bold cyan               # Dates and times
+host            bold blue               # Host names and IP numbers
+process         green                   # Sender process
+pid             bold white              # PIDs (Process IDs)
+pid-sqbr        bold green              # Brackets around PIDs
+default         cyan                    # Default (not colorised)
+email           bold green              # E-mail addresses
+subject         magenta                 # Subject lines (procmail)
+dir             bold cyan               # Directory names
+file            bold cyan               # File names
+size            bold white              # Sizes
+user            bold yellow             # Usernames
+httpcodes       bold white              # HTTP status codes (200, 404, etc)
+getsize         magenta                 # Transfer sizes
+get             green                   # HTTP GET
+post            bold green              # HTTP POST
+head            green                   # HTTP HEAD
+put             bold green              # HTTP PUT
+connect         green                   # HTTP CONNECT
+trace           green                   # HTTP TRACE
+unknown         cyan                    # Unknown message
+gettime         bold magenta            # Transfer times
+uri             bold green              # URIs (http://, ftp://, etc)
+ident           bold white              # Remote user (proxy/http)
+ctype           white                   # Content type (http/proxy)
+error           bold red                # Error messages
+miss            red                     # Proxy MISS
+hit             bold yellow             # Proxy HIT
+deny            bold red                # Proxy DENIED
+refresh         bold white              # Proxy REFRESH
+swapfail        bold white              # Proxy SWAPFAIL
+debug           white                   # Debug messages
+warning         red                     # Warnings
+direct          bold white              # Proxy DIRECT
+parent          bold yellow             # Proxy PARENT
+swapnum         blue on_white           # Proxy swap number
+create          bold white              # Proxy CREATE
+swapin          bold white              # Proxy SWAPIN
+swapout         bold white              # Proxy SWAPOUT
+release         bold white              # Proxy RELEASE
+mac             bold white              # MAC addresses
+version         bold white              # Version numbers
+address         bold white              # Memory addresses
+numbers         white                   # Numbers
+signal          bold yellow             # Signal names
+service         bold magenta            # Services
+prot            magenta                 # Protocols
+bad             bold yellow             # "Bad words"
+good            bold green              # "Good words"
+system          bold cyan               # "System words"
+incoming        bold white              # Incoming mail (exim)
+outgoing        white                   # Outgoing mail (exim)
+uniqn           bold white              # Unique ID (exim)
+repeat          white                   # 'last message repeated N times'
+field           green                   # RFC822 Field
+chain           cyan                    # Chain names (ulogd)
+percentage      bold yellow             # Percentages
+ftpcodes        cyan                    # FTP codes
+keyword         bold yellow             # Various keywords (like PHP in php.log, etc)
+pkgstatus       green                   # package status (dpkg)
+pkg             bold red                # package name (dpkg)
+dxchan          green                   # DXSpider channel message label
+dxchanleft      green                   # DXSpider channel message left direction
+dxchanright     bold cyan               # DXSpider channel message right direction
+dxchanx         bold cyan               # DXSpider channel message both directions
+dxchanname      bold cyan               # DXSpider channel message name
+dxchanerror     bold red                # DXSpider channel error message label
+dxchanerrortype red                     # DXSpider channel error type
+dxprogress      bold green              # DXSpider channel progress message label
+dxprogresstype  bold white              # DXSpider channel progress message type
+dxcall          bold green              # DXSpider DX spot call sign
+dxfreq          magenta                 # DXSpider DX spot frequency
+dxspotter       bold green              # DXSpider DX spot spotter call sign
+dxnode          blue                    # DXSpider DX spot submission node
+dxcomment       bold white              # DXSpider DX spot comment
+dxroute         blue                    # DXSpider DX spot routed by node
+dxpc9xnum       bold red                # DXSpider channel PC9x message label
+dxpcnum         red                     # DXSpider channel classic PCxx message label
+dxpcdelim       blue                    # DXSpider channel PC message field delimiter (^)
+dxpcnums        magenta                 # DXSpider channel PC message number field
+dxpcwords       green                   # DXSpider channel PC message word field
+dxpchops        bold blue               # DXSpider channel PC message hop count
+
+# CSS codes for the HTML output
+cssblack        black
+cssboldblack    black
+cssred          darkred
+cssboldred      red
+cssgreen        #00C000
+cssboldgreen    lime
+cssyellow       brown
+cssboldyellow   yellow
+cssblue         blue
+cssboldblue     slateblue
+csscyan         darkcyan
+cssboldcyan     cyan
+cssmagenta      darkmagenta
+cssboldmagenta  magenta
+csswhite        grey
+cssboldwhite    white
+cssbody         #404040
+.Fi
+.if n .in +\n(Tiu 
+
+
+.PP
+.SH VERSION INFORMATION
+This man page describes
+.IR "ccze 99.2.1" "."
+.SH AUTHORS
+John Kuras
+.SH COPYING PERMISSIONS
+Permission is granted to make and distribute verbatim copies of this man page without limitations.
+.PP
+Copyright 2023 John Kuras. All rights reserved.
+.SH SEE ALSO
+.BR ccze (1)
+.BR ccze-plugin (7),
