@@ -21,4 +21,5 @@ doc/ccze.1
 system.h
 /testsuite/Makefile
 /testsuite/test-tmp/
-
+doc/ccze-config.4
+src/ccze-builtins.c
