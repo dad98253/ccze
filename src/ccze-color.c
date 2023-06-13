@@ -172,6 +172,28 @@ static ccze_color_keyword_t ccze_color_keyword_map[] = {
 		 "Various keywords (like PHP in php.log, etc)")},
   {CCZE_KEYWORD ("pkgstatus", CCZE_COLOR_PKGSTATUS, "package status (dpkg)")},
   {CCZE_KEYWORD ("pkg", CCZE_COLOR_PKG, "package name (dpkg)")},
+  {CCZE_KEYWORD ("dxchan", CCZE_COLOR_DXSCHAN, "DXSpider channel message label")},
+  {CCZE_KEYWORD ("dxchanleft", CCZE_COLOR_DXSCHANDIRLEFT, "DXSpider channel message left direction")},
+  {CCZE_KEYWORD ("dxchanright", CCZE_COLOR_DXSCHANDIRRIGHT, "DXSpider channel message right direction")},
+  {CCZE_KEYWORD ("dxchanx", CCZE_COLOR_DXSCHANDIRX, "DXSpider channel message both directions")},
+  {CCZE_KEYWORD ("dxchanname", CCZE_COLOR_DXSCHANNAME, "DXSpider channel message name")},
+  {CCZE_KEYWORD ("dxchanerror", CCZE_COLOR_DXSCHANERROR, "DXSpider channel error message label")}, 
+  {CCZE_KEYWORD ("dxchanerrortype", CCZE_COLOR_DXSCHANERRORTYPE, "DXSpider channel error type")},
+  {CCZE_KEYWORD ("dxprogress", CCZE_COLOR_DXSPROGRESS, "DXSpider channel progress message label")},
+  {CCZE_KEYWORD ("dxprogresstype", CCZE_COLOR_DXSPROGRESSTYPE, "DXSpider channel progress message type")},
+  {CCZE_KEYWORD ("dxcall", CCZE_COLOR_DXSDXCALL, "DXSpider DX spot call sign")},
+  {CCZE_KEYWORD ("dxfreq", CCZE_COLOR_DXSDXFREQUENCY, "DXSpider DX spot frequency")},
+  {CCZE_KEYWORD ("dxspotter", CCZE_COLOR_DXSDXSPOTTER, "DXSpider DX spot spotter call sign")},
+  {CCZE_KEYWORD ("dxnode", CCZE_COLOR_DXSNODE, "DXSpider DX spot submission node")},
+  {CCZE_KEYWORD ("dxcomment", CCZE_COLOR_DXSDXCOMMENT, "DXSpider DX spot comment")},
+  {CCZE_KEYWORD ("dxroute", CCZE_COLOR_DXSDXROUTE, "DXSpider DX spot routed by node")},
+  {CCZE_KEYWORD ("dxpc9xnum", CCZE_COLOR_DXSPC9XNUM, "DXSpider channel PC9x message label")},
+  {CCZE_KEYWORD ("dxpcnum", CCZE_COLOR_DXSPCNUM, "DXSpider channel classic PCxx message label")},
+  {CCZE_KEYWORD ("dxpcdelim", CCZE_COLOR_DXSPCDELIM, "DXSpider channel PC message field delimiter (^)")},
+  {CCZE_KEYWORD ("dxpcnums", CCZE_COLOR_DXSPCMESSAGENUMS, "DXSpider channel PC message number field")},
+  {CCZE_KEYWORD ("dxpcwords", CCZE_COLOR_DXSPCMESSAGEWORDS, "DXSpider channel PC message word field")},
+  {CCZE_KEYWORD ("dxpchops", CCZE_COLOR_DXSPCHOPS, "DXSpider channel PC message hop count")},
+  
   
   {CCZE_KEYWORD_H ("black", CCZE_COLOR_STATIC_BLACK, "Black")},
   {CCZE_KEYWORD_H ("red", CCZE_COLOR_STATIC_RED, "Red")},
@@ -542,6 +564,27 @@ ccze_color_init_raw_ansi (void)
   ccze_color_table[CCZE_COLOR_KEYWORD] = (RAW_ANSI_BOLD | RAW_ANSI_YELLOW);
   ccze_color_table[CCZE_COLOR_PKGSTATUS] = (RAW_ANSI_GREEN);
   ccze_color_table[CCZE_COLOR_PKG] = (RAW_ANSI_BOLD|RAW_ANSI_RED);
+  ccze_color_table[CCZE_COLOR_DXSCHAN] = (RAW_ANSI_GREEN);
+  ccze_color_table[CCZE_COLOR_DXSCHANDIRLEFT] = (RAW_ANSI_GREEN);
+  ccze_color_table[CCZE_COLOR_DXSCHANDIRRIGHT] = (RAW_ANSI_BOLD | RAW_ANSI_CYAN);
+  ccze_color_table[CCZE_COLOR_DXSCHANDIRX] = (RAW_ANSI_BOLD | RAW_ANSI_CYAN);
+  ccze_color_table[CCZE_COLOR_DXSCHANNAME] = (RAW_ANSI_BOLD | RAW_ANSI_CYAN);
+  ccze_color_table[CCZE_COLOR_DXSCHANERROR] = (RAW_ANSI_BOLD | RAW_ANSI_RED); 
+  ccze_color_table[CCZE_COLOR_DXSCHANERRORTYPE] = ( RAW_ANSI_RED);
+  ccze_color_table[CCZE_COLOR_DXSPROGRESS] = (RAW_ANSI_BOLD | RAW_ANSI_GREEN);
+  ccze_color_table[CCZE_COLOR_DXSPROGRESSTYPE] = (RAW_ANSI_BOLD | RAW_ANSI_WHITE);
+  ccze_color_table[CCZE_COLOR_DXSDXCALL] = (RAW_ANSI_BOLD | RAW_ANSI_GREEN);
+  ccze_color_table[CCZE_COLOR_DXSDXFREQUENCY] = (RAW_ANSI_MAGENTA);
+  ccze_color_table[CCZE_COLOR_DXSDXSPOTTER] = (RAW_ANSI_BOLD | RAW_ANSI_GREEN);
+  ccze_color_table[CCZE_COLOR_DXSNODE] = (RAW_ANSI_BLUE);
+  ccze_color_table[CCZE_COLOR_DXSDXCOMMENT] = (RAW_ANSI_BOLD | RAW_ANSI_WHITE);
+  ccze_color_table[CCZE_COLOR_DXSDXROUTE] = (RAW_ANSI_BLUE);
+  ccze_color_table[CCZE_COLOR_DXSPC9XNUM] = (RAW_ANSI_BOLD | RAW_ANSI_RED);
+  ccze_color_table[CCZE_COLOR_DXSPCNUM] = (RAW_ANSI_RED);
+  ccze_color_table[CCZE_COLOR_DXSPCDELIM] = (RAW_ANSI_BLUE);
+  ccze_color_table[CCZE_COLOR_DXSPCMESSAGENUMS] = (RAW_ANSI_MAGENTA);
+  ccze_color_table[CCZE_COLOR_DXSPCMESSAGEWORDS] = (RAW_ANSI_GREEN);
+  ccze_color_table[CCZE_COLOR_DXSPCHOPS] = (RAW_ANSI_BOLD | RAW_ANSI_BLUE);
 
   ccze_color_table[CCZE_COLOR_STATIC_BLACK] = (RAW_ANSI_BLACK);
   ccze_color_table[CCZE_COLOR_STATIC_RED] = (RAW_ANSI_RED);
@@ -633,6 +676,27 @@ ccze_color_init (void)
   ccze_color_table[CCZE_COLOR_KEYWORD] = (BOLD YELLOW);
   ccze_color_table[CCZE_COLOR_PKGSTATUS] = (GREEN);
   ccze_color_table[CCZE_COLOR_PKG] = (BOLD RED);
+  ccze_color_table[CCZE_COLOR_DXSCHAN] = (GREEN);
+  ccze_color_table[CCZE_COLOR_DXSCHANDIRLEFT] = (GREEN);
+  ccze_color_table[CCZE_COLOR_DXSCHANDIRRIGHT] = (BOLD CYAN);
+  ccze_color_table[CCZE_COLOR_DXSCHANDIRX] = (BOLD CYAN);
+  ccze_color_table[CCZE_COLOR_DXSCHANNAME] = (BOLD CYAN);
+  ccze_color_table[CCZE_COLOR_DXSCHANERROR] = (BOLD RED); 
+  ccze_color_table[CCZE_COLOR_DXSCHANERRORTYPE] = ( RED);
+  ccze_color_table[CCZE_COLOR_DXSPROGRESS] = (BOLD GREEN);
+  ccze_color_table[CCZE_COLOR_DXSPROGRESSTYPE] = (BOLD WHITE);
+  ccze_color_table[CCZE_COLOR_DXSDXCALL] = (BOLD GREEN);
+  ccze_color_table[CCZE_COLOR_DXSDXFREQUENCY] = (MAGENTA);
+  ccze_color_table[CCZE_COLOR_DXSDXSPOTTER] = (BOLD GREEN);
+  ccze_color_table[CCZE_COLOR_DXSNODE] = (BLUE);
+  ccze_color_table[CCZE_COLOR_DXSDXCOMMENT] = (BOLD WHITE);
+  ccze_color_table[CCZE_COLOR_DXSDXROUTE] = (BLUE);
+  ccze_color_table[CCZE_COLOR_DXSPC9XNUM] = (BOLD RED);
+  ccze_color_table[CCZE_COLOR_DXSPCNUM] = (RED);
+  ccze_color_table[CCZE_COLOR_DXSPCDELIM] = (BLUE);
+  ccze_color_table[CCZE_COLOR_DXSPCMESSAGENUMS] = (MAGENTA);
+  ccze_color_table[CCZE_COLOR_DXSPCMESSAGEWORDS] = (GREEN);
+  ccze_color_table[CCZE_COLOR_DXSPCHOPS] = (BOLD BLUE);
 
   ccze_color_table[CCZE_COLOR_STATIC_BLACK] = (BLACK);
   ccze_color_table[CCZE_COLOR_STATIC_RED] = (RED);

@@ -1,6 +1,8 @@
 /* -*- mode: c; c-file-style: "gnu" -*-
- * mod_DXSpider.c -- DXSpider-related colorizers for CCZE
+ * mod_DXSpiderPCxx.c -- DXSpiderPCxx-based on related colorizers for CCZE
  * Copyright (C) 2002, 2003 Gergely Nagy <algernon@bonehunter.rulez.org>
+ * Modifications to incorporate DXSpider filtering:
+ * Copyright (C) 2023 John Kuras <w7og@yahoo.com>
  *
  * This file is part of ccze.
  *
@@ -17,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * The modifications to this file made by John Kuras are licensed without
+ * hinderance. I.e., do what you want with them.
  */
 
 #include <ccze.h>
@@ -55,24 +60,24 @@ ccze_DXSpider_process_chan (const char *str, int *offsets, int match)
   ccze_space ();
 
   ccze_addstr (CCZE_COLOR_DEFAULT, "(");
-  ccze_addstr (CCZE_COLOR_STATIC_GREEN, "chan");
+  ccze_addstr (CCZE_COLOR_DXSCHAN, "chan");
   ccze_addstr (CCZE_COLOR_DEFAULT, ")");
   ccze_space ();
   
   if ( strncmp (mtype,(char*)"I",1) == 0 ) {
-  	ccze_addstr (CCZE_COLOR_STATIC_GREEN, direction);
+  	ccze_addstr (CCZE_COLOR_DXSCHANDIRLEFT, direction);
   	ccze_space ();
-  	ccze_addstr (CCZE_COLOR_STATIC_GREEN, mtype);
+  	ccze_addstr (CCZE_COLOR_DXSCHANDIRLEFT, mtype);
   	ccze_space ();
   } else if ( strncmp (mtype,(char*)"D",1) == 0 ) {
-  	ccze_addstr (CCZE_COLOR_DATE, direction);
+  	ccze_addstr (CCZE_COLOR_DXSCHANDIRRIGHT, direction);
   	ccze_space ();
-   	ccze_addstr (CCZE_COLOR_DATE, mtype);
+   	ccze_addstr (CCZE_COLOR_DXSCHANDIRRIGHT, mtype);
   	ccze_space ();  
   } else if ( strncmp (mtype,(char*)"X",1) == 0 ) {
-  	ccze_addstr (CCZE_COLOR_DATE, direction);
+  	ccze_addstr (CCZE_COLOR_DXSCHANDIRX, direction);
   	ccze_space ();
-  	ccze_addstr (CCZE_COLOR_DATE, mtype);
+  	ccze_addstr (CCZE_COLOR_DXSCHANDIRX, mtype);
   	ccze_space ();  
   } else {
    	ccze_addstr (CCZE_COLOR_DEFAULT, direction);
@@ -80,7 +85,7 @@ ccze_DXSpider_process_chan (const char *str, int *offsets, int match)
   	ccze_addstr (CCZE_COLOR_DEFAULT, mtype);
   	ccze_space ();  
   }
-  ccze_addstr (CCZE_COLOR_DATE, connection);
+  ccze_addstr (CCZE_COLOR_DXSCHANNAME, connection);
   ccze_space ();
     
 //  ccze_addstr (CCZE_COLOR_PID, "PC");
@@ -116,11 +121,11 @@ ccze_DXSpider_process_chanerr (const char *str, int *offsets, int match)
   ccze_space ();
 
   ccze_addstr (CCZE_COLOR_DEFAULT, "(");
-  ccze_addstr (CCZE_COLOR_STATIC_BOLD_RED, "chanerr");
+  ccze_addstr (CCZE_COLOR_DXSCHANERROR, "chanerr");
   ccze_addstr (CCZE_COLOR_DEFAULT, ")");
   ccze_space ();
   
-  ccze_addstr (CCZE_COLOR_STATIC_RED, errortype);
+  ccze_addstr (CCZE_COLOR_DXSCHANERRORTYPE, errortype);
   ccze_addstr (CCZE_COLOR_DEFAULT, ":");
   ccze_space ();
 
@@ -158,20 +163,20 @@ ccze_DXSpider_process_progress (const char *str, int *offsets, int match)
   ccze_space ();
 
   ccze_addstr (CCZE_COLOR_DEFAULT, "(");
-  ccze_addstr (CCZE_COLOR_STATIC_GREEN, "progress");
+  ccze_addstr (CCZE_COLOR_DXSPROGRESS, "progress");
   ccze_addstr (CCZE_COLOR_DEFAULT, ")");
   ccze_space ();
   
-  ccze_addstr (CCZE_COLOR_STATIC_BOLD_RED & A_BLINK, errortype);
-  ccze_addstr (CCZE_COLOR_STATIC_RED, ":");
+  ccze_addstr (CCZE_COLOR_DXSPROGRESSTYPE, errortype);
+  ccze_addstr (CCZE_COLOR_DXSPROGRESSTYPE, ":");
   ccze_space ();
 
-  ccze_addstr (CCZE_COLOR_STATIC_BOLD_GREEN, dxcall);
+  ccze_addstr (CCZE_COLOR_DXSDXCALL, dxcall);
   ccze_space ();
   ccze_addstr (CCZE_COLOR_DEFAULT, "on");
   ccze_space ();
 
-  ccze_addstr (CCZE_COLOR_STATIC_MAGENTA, freq);
+  ccze_addstr (CCZE_COLOR_DXSDXFREQUENCY, freq);
   ccze_space ();
   ccze_addstr (CCZE_COLOR_DEFAULT, "@");
   ccze_space ();
@@ -181,20 +186,20 @@ ccze_DXSpider_process_progress (const char *str, int *offsets, int match)
   ccze_addstr (CCZE_COLOR_DEFAULT, "by");
   ccze_space ();
 
-  ccze_addstr (CCZE_COLOR_STATIC_BOLD_GREEN, spotter);
+  ccze_addstr (CCZE_COLOR_DXSDXSPOTTER, spotter);
   ccze_addstr (CCZE_COLOR_DEFAULT, "@");
   
-  ccze_addstr (CCZE_COLOR_STATIC_BLUE, node);
+  ccze_addstr (CCZE_COLOR_DXSNODE, node);
   ccze_space ();
   
   ccze_addstr (CCZE_COLOR_DEFAULT, "'");
-  ccze_addstr (CCZE_COLOR_PID, comment);
+  ccze_addstr (CCZE_COLOR_DXSDXCOMMENT, comment);
   ccze_addstr (CCZE_COLOR_DEFAULT, "'");
   ccze_space ();
   
   ccze_addstr (CCZE_COLOR_DEFAULT, "route:");
   ccze_space ();
-  ccze_addstr (CCZE_COLOR_STATIC_BLUE, route);
+  ccze_addstr (CCZE_COLOR_DXSDXROUTE, route);
 
   free (date);
   free (dxcall);
