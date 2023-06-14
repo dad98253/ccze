@@ -1,0 +1,38 @@
+23:46:43 (chan) <- I W8BS-2 PC92^KC9AOP-1^85603^A^^0AI7R^H96^
+23:46:44 (chan) <- I W8BS-2 PC92^SK6AW-2^85604^C^5SK6AW-2:5455^5SK3W-6^5SM6YOU-2^1PD5RV^1SM6UQL^1PD0SV^H96^
+23:46:47 (chan) <- I W8BS-2 PC92^ON0LLV-5^85607^A^^1ON3PUG:109.131.180.99^H96^
+23:46:47 (chan) <- I VE3ZIN-2 PC16^ON0LLV-5^ON3PUG - 1^H15^
+23:46:47 (chanerr) PCPROT: PC16 from VE3ZIN-2 trying to alter locally connected ON0LLV-5, ignored!
+23:46:47 (chan) <- I W8BS-2 PC92^W1NR^85607^A^^1KA1OB:67.246.22.254^H97^
+23:46:49 (chan) -> D VE3ZIN-2 PC19^1^N6WS-6^0^5457^H15^
+23:46:49 (chan) <- I VE3ZIN-2 PC19^1^N6WS-6^0^5457^H15^
+23:46:49 (chanerr) PCPROT: non-local node controlled by PC92, ignored
+23:46:51 (chanerr) PCPROT: Route::User G4UZG not in config
+23:46:53 (chan) -> D VE3ZIN-2 PC17^AA5NT^K1TTT^H15^
+23:46:59 (chanerr) PCPROT: emphemeral duplicate
+23:47:00 (chanerr) PCPROT: PC16 from VE3ZIN-2 trying to alter locally connected EA4RCH-5, ignored!
+23:47:01 (*) RBN:WRITE_CACHE size: 0.013KB time to write: 1 mS
+23:55:19 (progress) SPOT: C6AFP/B on 50040.0 @ 2355Z by WB7PMP@EA6VQ-2 'EM95PU<ES>FL16IS strong' route: VE3ZIN-2
+23:55:19 (chan) <- I W8BS-2 PC92^W9AEK^86119^C^5W9AEK:5457^0K9BOJ^0KG4JVU^0K4BUC^1KB9FIN^0W4DTA^0N6SPP^0W9HC^5G6NHU-2^1K9CG^0N4AN^0NE6I-33^1N9SW^0NL7TK^0N3LSJ^1W9II^1NA9D^0KC3SRB^H97^
+23:55:22 (progress) SPOT: F5MXH on 18101.2 @ 2355Z by N9NTC(47.12.102.237)@VE7CC-1 '' route: VE3ZIN-2
+23:55:22 (chanerr) PCPROT: Duplicate Spot  W8BS-2: PC61 18101.2|F5MXH|1686700500|N9NTC|VE7CC-1 ignored
+23:55:42 (connect) ExtMsg accept 22:127.0.0.1 from 127.0.0.1:41056
+23:55:42 (connect) ExtMsg connect 22: login: 
+23:55:42 (connect) connect 22: timeout set to 60
+23:55:46 (connect) connect 22: w7og
+23:55:46 (chan) DXChannel W7OG created (4)
+23:55:46 (chan) -> D VE3ZIN-2 PC16^W7OG-2^W7OG - 1^H15^
+23:55:46 (chan) <- A W7OG local
+23:55:46 (chan) -> D W7OG Hello john, this is W7OG-2 in Greenbank
+23:55:46 (state) W7OG channel func  state 0 -> prompt
+23:55:46 (DXCommand) W7OG connected from 127.0.0.1 cols 80
+23:55:46 (progress) CMD: 'show/cluster ' by W7OG ip: 127.0.0.1 0mS
+23:55:46 (chan) -> D W7OG Nodes: 2/398 Users [Loc/Clr]: 1/2807 Max: 2/4602 - Uptime:  1d 20h 3m
+23:55:46 (chan) -> D W7OG W7OG de W7OG-2 13-Jun-2023 2355Z 2.4481  dxspider >
+23:56:01 (chan) <- I W7OG sho/dx
+23:56:01 (progress) CMD: 'sho/dx ' by W7OG ip: 127.0.0.1 0mS
+23:56:01 (chan) -> D W7OG   18101.2 F5MXH       13-Jun-2023 2355Z                               <N9NTC>
+23:56:05 (DXCommand) W7OG disconnected
+23:56:05 (progress) CMD: 'bye ' by W7OG ip: 127.0.0.1 1mS
+
+

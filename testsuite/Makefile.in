@@ -13,7 +13,7 @@ TESTS_ENVIRONMENT       = top_builddir=$(top_builddir) \
 			VERSION=$(VERSION)
 TESTS                   = version.test bug-wnum.test bug-procmailsubj.test \
 			bug-procmailsubj2.test bug-sysrepeat.test bug-httpd.test \
-			bug-dpkg.test
+			bug-dpkg.test bug-dxspider.test
 TEST_IO			= $(foreach test,${TESTS},\
 				$(addsuffix .ok,$(basename $(test)))) \
 			$(foreach test,${TESTS},\
