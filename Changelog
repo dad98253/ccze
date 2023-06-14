@@ -1,0 +1,5399 @@
+commit b345059da45d99bde54ca2f21454eeb5654f27a6
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 18:51:44 2023 -0700
+
+    code cleanup
+
+M	src/mod_DXSpider.c
+
+commit a63cf1cbc4ebf6d188391586332157a6daf54004
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 18:46:09 2023 -0700
+
+    added DXSpider test to the test suite
+
+M	testsuite/Makefile.in
+A	testsuite/bug-dxspider.in
+A	testsuite/bug-dxspider.ok
+A	testsuite/bug-dxspider.test
+
+commit 8601a116f55338ab695217def5a9b01a41b5698e
+Merge: 62729f2 93af421
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 03:08:32 2023 -0700
+
+    Merge remote-tracking branch 'refs/remotes/origin/master'
+
+commit 62729f2eccf693d1d4c32e0a82416c8d4c9cc01c
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 03:05:51 2023 -0700
+
+    created ccze color items for use in the DXSpider modules
+
+M	src/ccze-color.c
+M	src/ccze.h
+M	src/mod_DXSpider.c
+M	src/mod_DXSpiderPCxx.c
+
+commit 9b0e70089b755228bb09031136381a44117651d6
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 03:04:11 2023 -0700
+
+    updated gitignore
+
+M	.gitignore
+
+commit d4bd2eae4dd280e1582dcc05f69cd3d0d14ba1c4
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 03:01:42 2023 -0700
+
+    added man page for config file
+
+M	Rules.mk.in
+M	doc/Makefile.in
+A	doc/ccze-config.4.in
+M	doc/ccze.1.in
+
+commit 4752810a306bd900c2840d5f2af52b8e70f1a704
+Author: John Kuras <w7og@yahoo.com>
+Date:   Tue Jun 13 02:58:18 2023 -0700
+
+    updated AUTHORS
+
+M	AUTHORS
+
+commit 93af4212214c0dbed08a4c69d8ab2912d4042f29
+Author: dad <w7og@yahoo.com>
+Date:   Sun Jun 11 23:34:22 2023 -0700
+
+    Update README
+
+M	README
+
+commit 73175f8b4a6757ecdadaad90f3eaefba35d7c65b
+Author: John Kuras <w7og@yahoo.com>
+Date:   Sun Jun 11 22:43:02 2023 -0700
+
+    added colorizer plugin got DXSpider PCxx messages
+
+M	ccze.plugins
+M	src/mod_DXSpider.c
+A	src/mod_DXSpiderPCxx.c
+
+commit 302feff3b806e56d69301f0f1bc94d4335a6e04f
+Author: root <root@kuras-sea.mylocal>
+Date:   Sun Jun 11 00:33:05 2023 -0700
+
+    added a module for DXSpider debug log files
+
+M	ccze.plugins
+A	src/mod_DXSpider.c
+
+commit e00d1db1a08d42ee3f9385302fea708af16c0695
+Author: root <root@kuras-sea.mylocal>
+Date:   Sun Jun 11 00:31:51 2023 -0700
+
+    updated version number
+
+M	Rules.mk.in
+M	configure.ac
+
+commit e01d470c71cea39b009f03b8e4e514703cb6dffa
+Author: root <root@kuras-sea.mylocal>
+Date:   Sun Jun 11 00:30:23 2023 -0700
+
+    updated gitignore
+
+M	.gitignore
+
+commit 7c7927fba98275c10ae614bd8c1a1367f87a258c
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Aug 28 12:04:32 2014 +0200
+
+    src/ccze.c: Default to raw ANSI if stdout is not a terminal
+    
+    If stdout is not a terminal, use raw ANSI by default, as pagers handle
+    that far better than curse. This fixes #1.
+    
+    Reported-by: Marcel Partap
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/ccze.c
+
+commit b81e8be6f2d5f404fe9fee1adc1d1dcee652da09
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 16:49:03 2014 +0200
+
+    Upgrade config.* and install-sh
+    
+    Update the config.guess, config.sub and install-sh files from a recent
+    automake. This will all go away if and when ccze is switched to
+    automake.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	config.guess
+M	config.sub
+M	install-sh
+
+commit efcfd8dcb85239100c4f7ca181cf0400377efc67
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 16:22:16 2014 +0200
+
+    debian/: Drop Debian packaging too
+    
+    Packaging does not belong to the upstream master branch, drop it.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+D	debian/changelog
+D	debian/control
+D	debian/copyright
+D	debian/rules
+
+commit e116ae590a90aed294420ecfac3421cdf163b017
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 16:21:31 2014 +0200
+
+    Drop the spec file
+    
+    Packaging is not something upstream does - drop the spec file.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	.gitignore
+M	Makefile.in
+D	ccze.spec.in
+
+commit b5911afb6991572a0652540b0191a6a53b8fc339
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 16:17:16 2014 +0200
+
+    Drop the old TLA ChangeLogs
+    
+    Drop the old TLA ChangeLogs, they're not being updated anymore since the
+    switch to Git. While there, also updated all users of PATCHLEVEL to use
+    VERSION (defined in Rules.mk.in).
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+D	ChangeLog
+D	ChangeLog-0.1
+M	Makefile.in
+M	Rules.mk.in
+M	ccze.spec.in
+M	debian/rules
+M	doc/Makefile.in
+M	src/Makefile.in
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze.c
+
+commit a1d682fd7f97bb16b10a5ca4962dbbed9e9cc8cf
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 16:00:06 2014 +0200
+
+    src/ccze.c: Minor exit-time leak plugs
+    
+    Free up a few more things at exit-time to make valgrind 100% happy.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/ccze.c
+
+commit 1fb3f9ec1e39b26e2831e8d1045fe38bbf76bc4e
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 15:53:24 2014 +0200
+
+    src/ccze-color.c: Use a static stat buffer
+    
+    Use a static struct stat buffer when loading a color file, so we have a
+    clean starting state.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/ccze-color.c
+
+commit 1de7a6e285df3aabdfd6870b6c08b0645ebd9523
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 15:41:18 2014 +0200
+
+    Simplify the compiler warning flags
+    
+    Instead of having a huge list of custom compiler warning flags, use
+    -Wall -Wextra only.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	configure.ac
+M	src/Makefile.in
+
+commit ef49cf13fbb6883cb77bab9e25f70d66e9d7f927
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 15:38:53 2014 +0200
+
+    Warning fixes
+    
+    Add a few __attribute__((unused)) declarations, and clean up the code so
+    it produces no warnings with -Wall -Wextra.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze.c
+M	src/mod_postfix.c
+
+commit 1891ccdf8dd440788457ec811d57b1df12a18519
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 15:36:33 2014 +0200
+
+    Use 'chtype' when working with ncurses colors
+    
+    To silence a compile-time warning, use chtype instead of int when
+    working with ncurses colors.
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/ccze-color.c
+M	src/ccze-dump.c
+M	src/ccze-private.h
+
+commit 587f5d955353c50594c594f9a5b56efd1ed33b79
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Thu Jun 26 14:29:09 2014 +0200
+
+    wordcolor: Add 'systemd' to the system color group
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/ccze-wordcolor.c
+
+commit 19d069c6b4a1fc2cbedcfc2eed87354f2b212e79
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Mon Jun 23 17:08:50 2014 +0200
+
+    mod_dpkg: Recognise "configure" as an action too
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	src/mod_dpkg.c
+M	testsuite/bug-dpkg.in
+M	testsuite/bug-dpkg.ok
+
+commit c9bc0564e8786dc0e5d08e52476bcdcca8196616
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Mon Jun 23 17:08:44 2014 +0200
+
+    .gitignore: Ignore ccze.spec
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+M	.gitignore
+
+commit d12ad4b20f361d5dd4a8918739e7e093424f7812
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Mon Jun 23 16:26:13 2014 +0200
+
+    .gitignore: New file
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+A	.gitignore
+
+commit 095b4f4efeb4e45001c0ffe098ecf15a47416288
+Author: Gergely Nagy <algernon@madhouse-project.org>
+Date:   Mon Jun 23 16:24:01 2014 +0200
+
+    TODO: Removed
+    
+    Signed-off-by: Gergely Nagy <algernon@madhouse-project.org>
+
+D	TODO
+
+commit 36ce357d68d8da09b363d2b0b7a6ad8bb4d5d57c
+Author: Stephen Gran <sgran@debian.org>
+Date:   Sat Sep 1 13:29:01 2007 +0100
+
+    debian/changelog: Updated for 0.2.1-2
+
+M	debian/changelog
+
+commit 4e9d6e107029181acd1fc6589f8c37311643b1b1
+Author: Stephen Gran <sgran@debian.org>
+Date:   Sat Sep 1 13:29:01 2007 +0100
+
+    debian/rules: Don't ignore errors in clean target
+
+M	debian/rules
+
+commit 6d263b9a7635eab94ccefc9c4644efc43118d119
+Author: Stephen Gran <sgran@debian.org>
+Date:   Sat Sep 1 13:29:01 2007 +0100
+
+    debian/control: Maintainer update
+
+M	debian/control
+
+commit 6467c988491dabd36f74335f573f14afc813714b
+Author: Stephen Gran <sgran@debian.org>
+Date:   Sat Sep 1 13:29:01 2007 +0100
+
+    debian/control: Bump standards version to 3.7.2
+
+M	debian/control
+
+commit 1a304a2f624ca73a02d3c19a618d723340ca9cf7
+Author: GSR <gsr.bugs@infernal-iceberg.com>
+Date:   Fri Mar 30 22:21:15 2007 +0200
+
+    src/ccze-wordcolor.c: Recognise +-prefixed numbers too
+    
+    Closes: Debian#416854
+
+M	src/ccze-wordcolor.c
+
+commit 6fe01cd2b3de6941c615bebbb9a2b0b0e5877919
+Author: arno <arno.@no-log.org>
+Date:   Fri Jan 5 01:05:01 2007 +0100
+
+    mod_dpkg: New plugin for dpkg logs
+    
+    Closes: Debian#405617
+
+M	ccze.plugins
+M	src/ccze-color.c
+M	src/ccze.h
+A	src/mod_dpkg.c
+M	testsuite/Makefile.in
+A	testsuite/bug-dpkg.in
+A	testsuite/bug-dpkg.ok
+A	testsuite/bug-dpkg.test
+
+commit fb5dc405800ddbf4984027109518e59f3fc9ad80
+Author: Stephen Gran <sgran@debian.org>
+Date:   Mon Apr 17 20:07:56 2006 +0100
+
+    debian/changelog: Update for 0.2.1-1.2
+
+M	debian/changelog
+
+commit c3df30e010f44e1c37c49ddc9f82d378ef15495b
+Author: Jean-Philippe Guérard <jean-philippe.guerard@tigreraye.org>
+Date:   Mon Jan 2 01:52:37 2006 +0100
+
+    src/ccze-wordcolor.c: Add "virus" & "clean" to bad/goodwords
+    
+    To better interpret logs about virus (for example with clamsmtp) it
+    would be nice to add "virus" to the bad words list and "clean" to the
+    good word list.
+    
+    Closes: Debian#345586
+
+M	src/ccze-wordcolor.c
+
+commit 2ab2889a1181351de82ca79d5d2114d85d1800a9
+Author: Stephen Gran <sgran@debian.org>
+Date:   Mon Apr 17 20:25:46 2006 +0100
+
+    debian/control: Updated to 3.6.2
+
+M	debian/control
+
+commit 7ff84cac15dcb60f087c732ac205629f75b33f5c
+Author: Stephen Gran <sgran@debian.org>
+Date:   Mon Apr 17 20:25:46 2006 +0100
+
+    debian/copyright: Fix the FSF address
+
+M	debian/copyright
+
+commit 1589de42efcc05882c3f42fc846e82a05416f956
+Author: Stephen Gran <sgran@debian.org>
+Date:   Mon Apr 17 20:25:46 2006 +0100
+
+    debian/copyright: Make it pedantically correct
+    
+    Closes: Debian#290082
+
+M	debian/copyright
+
+commit 03ed21857df3c1760f2cb85761ec93487aa4fa45
+Author: Stephen Gran <sgran@debian.org>
+Date:   Mon Apr 17 20:25:46 2006 +0100
+
+    src/mod_syslog.c: Fix busybox syslog parsing
+    
+    Allow for extra space in syslog parsing.
+    
+    Closes: Debian#330974
+
+M	src/mod_syslog.c
+
+commit 24f968a9ad62120d7eaceb0be625b9c2bb44a01e
+Author: Stephen Gran <sgran@debian.org>
+Date:   Sun Oct 30 20:01:35 2005 +0000
+
+    Update debian/changelog for 0.2.1-1.1
+
+M	debian/changelog
+
+commit 49bc2bf2c444bf3ceac22e6485881b9a7f169bd7
+Author: Andreas Jochens <aj@andaco.de>
+Date:   Wed Jan 5 22:52:05 2005 +0100
+
+    Fix FTBFS with gcc 4.0+ and glibc 2.3+
+    
+    Closes: Debian#288834, Debian#322985
+
+M	configure.ac
+M	src/Makefile.in
+
+commit 6fb6f7918d52c1115d5a91025dba98de78ffd64f
+Author: Vincent Crevot <vcrevot@retroject.net>
+Date:   Sat Aug 13 23:32:37 2005 +0200
+
+    src/ccze.c: Fix parse_opt segfault
+    
+    Closes: Debian#322993
+
+M	src/ccze.c
+
+commit 5eb645dfdbad6e3309fd07651642505418c2d6bb
+Author: A Costa <agcosta@gis.net>
+Date:   Sat Apr 30 03:58:17 2005 -0400
+
+    doc/ccze.1.in: Fix typos
+    
+    Closes: Debian#307036
+
+M	doc/ccze.1.in
+
+commit 2be67c0d94dc81d1c3ed03f9d2b7194f6a9cc568
+Merge: 4a67184 1a65444
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue May 13 18:07:25 2003 +0000
+
+    The `Fireflower' release
+    
+      Always cold outside
+      And it's freezing inside
+      Into the fire we ride
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    Patches applied:
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-12
+         Run `make check' during distcheck
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-11
+         Fixed procmail subject coloring
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-10
+         Fixed the testsuite
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-9
+         Support transparency in the ANSI output too
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-8
+         Raw ANSI supports background colors
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-7
+         Documented ccze-dump
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-6
+         ChangeLog id update
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-5
+         TODO removed
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-4
+         Fixed double module loading
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-3
+         Added --mode
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-2
+         Documented --list-plugins
+    
+      * algernon@bonehunter-rulez.org--iluvatar-archive/ccze--0.3--patch-1
+         Fixed a compile-time warning
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.2--patch-1
+
+commit 1a65444df8e54402c758d340910c85b0e7fd57ef
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Apr 26 21:36:41 2003 +0000
+
+    Run `make check' during distcheck
+    
+    * Makefile.in (distcheck): Configure with --with-builtins=all, and run
+      `make check' after the build.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-12
+
+M	ChangeLog
+M	Makefile.in
+
+commit 837e171d251651c642fa59527e1323b6b60c6f56
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Apr 26 14:16:04 2003 +0000
+
+    Fixed procmail subject coloring
+    
+    * src/mod_procmail.c (ccze_procmail_process): If the header field is
+      Subject or Folder, put out space2 with the same color. This fixes the
+      problem where the first set of whitespace in a multi-word subject were
+      coloured with the default color.
+    * testsuite/bug-procmailsubj2.test: New test.
+    * testsuite/bug-procmailsubj2.in: New input file.
+    * testsuite/bug-procmailsubj2.ok: New expected output.
+    * testsuite/Makefile.in (TESTS): Added bug-procmailsubj2.test.
+    
+    Problem was noticed by Alan Schmitt, who also provided the sample input
+    to trigger the bug.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-11
+
+M	ChangeLog
+M	src/mod_procmail.c
+M	testsuite/Makefile.in
+A	testsuite/bug-procmailsubj2.in
+A	testsuite/bug-procmailsubj2.ok
+A	testsuite/bug-procmailsubj2.test
+
+commit 996c2f5909a872a8887c480169fe7b36e1e9856d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Apr 26 14:10:17 2003 +0000
+
+    Fixed the testsuite
+    
+    * testsuite/do-test: Compare with ${srcdir}/${testname}.ok and .errok,
+      instead of ./${testname}.ok. This way make check will not silently
+      pass in a separate objtree.
+    * testsuite/bug-httpd.ok: Regenerated.
+    * testsuite/bug-procmailsubj.ok: Likewise.
+    * testsuite/bug-procmailsubj.test: Add -p procmail to the CCZE
+      commandline.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-10
+
+M	ChangeLog
+M	testsuite/bug-httpd.ok
+M	testsuite/bug-procmailsubj.ok
+M	testsuite/bug-procmailsubj.test
+M	testsuite/do-test
+
+commit 277ca56c369404a0e271584be08142cefe37224f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Apr 26 12:45:07 2003 +0000
+
+    Support transparency in the ANSI output too
+    
+    * src/ccze.c (ccze_addstr_internal): Only set the background if it is
+      necessary.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-9
+
+M	ChangeLog
+M	src/ccze.c
+
+commit ba16c0873108b73f23355f2013deb747c38d6116
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Apr 26 11:48:06 2003 +0000
+
+    Raw ANSI supports background colors
+    
+    * src/ccze-color.c (RAW_ANSI_BOLD): Added one more zero to the end.
+      (RAW_ANSI_UNDERLINE): Likewise.
+      (RAW_ANSI_REVERSE): Likewise.
+      (RAW_ANSI_BLINK): Likewise.
+    * src/ccze.c (ccze_addstr_internal): Added support for ANSI background
+      setting, underline, reverse and blink (though they probably don't
+      work :)
+    
+    Fixes #0000034.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-8
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze.c
+
+commit 3b8e2b3c228684bf9a098be015ea29072e06baa3
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Apr 24 18:38:19 2003 +0000
+
+    Documented ccze-dump
+    
+    * doc/ccze.1.in (FILES): Documented ccze-dump.
+    
+    Noticed by Alan Schmitt. Fixes #0000033.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-7
+
+M	ChangeLog
+M	doc/ccze.1.in
+
+commit d3f16ca03247001c28b1bc07ea20ab15c4ca1be4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Apr 8 13:48:20 2003 +0000
+
+    ChangeLog id update
+    
+    Updated the changelog arch id to 1.0pre17 format.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-6
+
+M	ChangeLog
+
+commit 67aef1f2eb3601ee9a45c7c8c9774410aa98c805
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Apr 8 13:43:19 2003 +0000
+
+    TODO removed
+    
+    * TODO: Removed. All users updated.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-5
+
+M	Makefile.in
+M	ccze.spec.in
+M	debian/rules
+
+commit 5deef0ab0c45ca81fd529e8356065ff7ad0fa249
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Apr 1 14:44:22 2003 +0000
+
+    Fixed double module loading
+    
+    * src/ccze_plugin.c (_ccze_plugin_allow): Use _ccze_plugin_loaded() to
+      check if the module is already loaded.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-4
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit 45987624d8b482931a6d9884ce0be39241278397
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Mar 30 11:56:20 2003 +0000
+
+    Added --mode
+    
+    * src/ccze.c (parse_opt): Recognise --mode.
+    * doc/ccze.1.in (OPTIONS): Documented it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-3
+
+M	ChangeLog
+M	doc/ccze.1.in
+M	src/ccze.c
+
+commit 4180ad262d57f60ecc7c38e36b4cb6b1b796c93d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Mar 30 11:28:38 2003 +0000
+
+    Documented --list-plugins
+    
+    * doc/ccze.1.in (OPTIONS): Documented --list-plugins.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-2
+
+M	ChangeLog
+M	doc/ccze.1.in
+
+commit 8c730afd8176c8c76538939080230cbd3dcb2cdf
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Mar 30 11:22:44 2003 +0000
+
+    Fixed a compile-time warning
+    
+    * src/ccze-plugin.c (ccze_plugin_list_fancy): Initialise `type' to
+      "Unknown".
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.3--patch-1
+
+M	ChangeLog
+C100	ChangeLog	ChangeLog-0.1
+A	ChangeLog-0.2
+M	Makefile.in
+M	NEWS
+M	Rules.mk.in
+M	ccze.spec.in
+M	configure.ac
+M	debian/changelog
+M	src/ccze-plugin.c
+M	src/ccze.c
+
+commit 4a67184d9daf03d79ea44809d7ca92ffab5b4a68
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 16:53:51 2003 +0000
+
+    mod_ftpstats
+    
+    * src/mod_ftpstats.c: New file.
+    * ccze.plugins: Added ftpstats.
+    * doc/ccze.1.in (PLUGINS): Documented it.
+    
+    Thanks to Ciga for the sample logs.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-243
+
+M	ChangeLog
+M	ccze.plugins
+M	doc/ccze.1.in
+A	src/mod_ftpstats.c
+
+commit df80b99b393f61cb2936766ea726da7895854a3f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 16:14:20 2003 +0000
+
+    Bumped Standards-Version
+    
+    * debian/control (Standards-Version): Updated to 3.5.9.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-242
+
+M	ChangeLog
+M	debian/control
+
+commit 1d5f21465dd1f3ac6f561266a4112327cc1f3ea3
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 16:10:25 2003 +0000
+
+    Support Pure-FTPD CLF format
+    
+    * src/mod_httpd.c (ccze_httpd_setup): Modified the httpd_access regexp
+      to catch pure-ftpd's CLF logformat.
+    * doc/ccze.1.in (PLUGINS): Documented this.
+    
+    Thanks to Ciga for his assistance.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-241
+
+M	ChangeLog
+M	doc/ccze.1.in
+M	src/mod_httpd.c
+
+commit 7a782364cf4bbc63e6085f96b6252389b68bc388
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 15:58:53 2003 +0000
+
+    Fixed coloring of bad HTTP requests
+    
+    * src/mod_httpd.c (ccze_httpd_setup): Changed the httpd_access regexp
+      to allow arbitrary request methods.
+    * testsuite/bug-httpd.test: New test.
+    * testsuite/bug-httpd.in: New test input.
+    * testsuite/bug-httpd.ok: New expected test output.
+    * testsuite/Makefile.in (TESTS): Added bug-httpd.test.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-240
+
+M	ChangeLog
+M	src/mod_httpd.c
+M	testsuite/Makefile.in
+A	testsuite/bug-httpd.in
+A	testsuite/bug-httpd.ok
+A	testsuite/bug-httpd.test
+
+commit 02b5cb1106a37cf0c9870459888aaf02bf61e6d4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 15:06:27 2003 +0000
+
+    FAQ cosmetic fix
+    
+    * FAQ: Removed a spurious newline.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-239
+
+M	ChangeLog
+M	FAQ
+
+commit cf0b9c81ed42cd95f9f25165425c487a641d4281
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 15:04:28 2003 +0000
+
+    Documentation update and a minor fix
+    
+    * doc/ccze-plugin.7.in: Updated to reflect reality. Some parts were
+      really outdated.
+    * Makefile.in (ccze.spec): Renamed to...
+      (${top_srcdir}/ccze.spec): ...this.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-238
+
+M	ChangeLog
+M	Makefile.in
+M	doc/ccze-plugin.7.in
+
+commit 3426923e54b41295a2aa6378a090566e9bc8ffce
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 14:44:28 2003 +0000
+
+    Preparing 0.2.0...
+    
+    * Rules.mk.in (DIST): New variable.
+      (PATCHLEVEL): Support -base-*.
+    * ccze.spec.in: Support %{dist} (via @DIST@).
+    * Makefile.in (ccze.spec): Substitue @DIST@ with ${DIST}.
+    * debian/rules (binary-ccze): Support more than one ChangeLog.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-237
+
+M	ChangeLog
+M	Makefile.in
+M	Rules.mk.in
+M	ccze.spec.in
+M	debian/rules
+
+commit 438be036b8c10087b2c29f7a7b425df59c768af9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 14:24:27 2003 +0000
+
+    Fixed compile-time warnings
+    
+    * src/ccze.c (ccze_newline): Added a default ccze_mode_t handler.
+      (ccze_addstr_internal): Likewise.
+      (ccze_main): Use sigint_handler() when doing the plugin listing.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-236
+
+M	ChangeLog
+M	src/ccze.c
+
+commit f5e27ac71e7a583979b0d528b4cbae38c267559c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 14:18:55 2003 +0000
+
+    Added support for listing plugins
+    
+    * src/ccze-private.h (ccze_mode_t): Added a CCZE_MODE_PLUGIN_LIST mode.
+      (ccze_plugin_list_fancy): New prototype.
+    * src/ccze.c (parse_opt): Handle --list-plugins.
+      (main): Added support for the new CCZE_MODE_PLUGIN_LIST mode.
+    * src/ccze.h (ccze_plugin_t): Added a new `desc' member.
+      [CCZE_ABI_VERSION]: Bumped to 2.
+      [CCZE_DEFINE_PLUGIN]: Take a third argument: desc.
+    * src/ccze-plugin.c (ccze_plugin_list_fancy): New function.
+    
+    All plugins updated to CCZE_ABI_VERSION 2 requirements.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-235
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze-private.h
+M	src/ccze.c
+M	src/ccze.h
+M	src/mod_apm.c
+M	src/mod_distcc.c
+M	src/mod_exim.c
+M	src/mod_fetchmail.c
+M	src/mod_httpd.c
+M	src/mod_icecast.c
+M	src/mod_oops.c
+M	src/mod_php.c
+M	src/mod_postfix.c
+M	src/mod_procmail.c
+M	src/mod_proftpd.c
+M	src/mod_squid.c
+M	src/mod_sulog.c
+M	src/mod_super.c
+M	src/mod_syslog.c
+M	src/mod_ulogd.c
+M	src/mod_vsftpd.c
+M	src/mod_xferlog.c
+
+commit 182f91a0bacbe2fa39476d9f75238dcc72038878
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 13:28:15 2003 +0000
+
+    Code cleanup
+    
+    * src/ccze-private.h (ccze_mode_t): New typedef.
+      (ccze_config_t): Replace `html', `debug' and `raw_ansi' members with
+      `mode'.
+    
+    All users updated accordingly.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-234
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze-private.h
+M	src/ccze.c
+
+commit 6cdf3fca7d5975e3133268fa8076b4ac0ff348e7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 13:10:13 2003 +0000
+
+    Fixed plugin loading (well, setup)
+    
+    * src/ccze-plugin.c (ccze_plugin_setup): Do not increment `i' while
+      calling ->startup.
+    
+    Problem noticed & debugged by Ciga.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-233
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit 5abb0f876582ab4dc6e3ec84c0ad8bed21deb136
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 12:49:11 2003 +0000
+
+    Fixed ICC warnings
+    
+    * src/ccze.h [CCZE_DEFINE_PLUGIN]: Do not put a coma after the struct.
+      [!BUILTIN] [__default_plugin]: Start with a coma.
+    * src/ccze-cssdump.c: Do not declare ccze_config static.
+    * src/ccze-dump.c: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-232
+
+M	ChangeLog
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze.h
+
+commit 738343a755acebaf410be8391b5a6a202495168f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 12:28:49 2003 +0000
+
+    FAQ update
+    
+    * FAQ: Added a new Q&A.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-231
+
+M	ChangeLog
+M	FAQ
+
+commit ee6fa063100c175c944b2ec72b1101cff518a63f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 12:17:59 2003 +0000
+
+    raw ANSI output mode
+    
+    * src/ccze-private.h (ccze_config_t): Added a new `raw_ansi' member.
+    * src/ccze.c (ccze_raw_ansi_color): New variable.
+      (ccze_config_t): Initialise raw_ansi to off.
+      (parse_opt): Accept --raw-ansi, -A.
+      (ccze_newline): Output only a `\n' in raw_ansi mode.
+      (ccze_addstr_internal): Added support for outputting raw ANSI
+      sequences.
+      (sigint_handler): Likewise.
+      (main): Likewise.
+    * src/ccze-color.c (ccze_color_parse): Added support for raw ANSI
+      sequences.
+      (ccze_color_init_raw_ansi): New function.
+      (ccze_color_init): Use it, if appropriate.
+    * src/ccze-cssdump (ccze_config): New variable. Since
+      ccze_color_parse() needs this.
+      (parse_opt): Use ccze_config.rcfile.
+      (main): Likewise.
+    * src/ccze-dump (ccze_config): New variable. Since ccze_color_parse()
+      needs this.
+      (parse_opt): Use ccze_config.rcfile.
+      (main): Likewise.
+    * THANKS: Added Thomas Graf.
+    * doc/ccze.1.in (OPTIONS): Document --raw-ansi, -A.
+    
+    Patch heavily based on the work of Thomas Graf.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-230
+
+M	ChangeLog
+M	THANKS
+M	doc/ccze.1.in
+M	src/ccze-color.c
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze-private.h
+M	src/ccze.c
+
+commit 8bd187fa75889b0193ff8575d01b854e6c5c980a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 29 11:11:39 2003 +0000
+
+    Whoops..! Corrected Ciga's name.
+    
+    * THANKS: Write Ciga's name in english-style, like all others.
+    
+    Noticed by himself.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-229
+
+M	ChangeLog
+M	THANKS
+
+commit 09bbbf4c1924fd316f310bab808d4eb935dd0e7f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Mar 20 22:52:15 2003 +0000
+
+    The `Largo' release.
+    
+      No tree's shade ever was
+      more serence, dear and lovely.
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-228
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit 403b40a6d878773e29d53b0483c1a33d88aeaa52
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 19 10:26:56 2003 +0000
+
+    Support loading a module twice or more
+    
+    * src/ccze.h (__default_plugin): New define.
+      (CCZE_DEFINE_PLUGIN): Use it.
+      (ccze_plugin_name_get): New prototype.
+    * src/ccze-private.h (ccze_plugin_setup): New prototype.
+    * src/ccze-plugin.c (ccze_plugin_setup): New function, extracted from
+      src/main.c's main().
+      (ccze_plugin_shutdown): Place the current plugin name into
+      `plugin_running'.
+      (ccze_plugin_run): Likewise.
+      (ccze_plugin_argv_set): Initialise ->argv[0].
+      (ccze_plugin_name_get): New function.
+      (_ccze_plugin_load): If loading in the normal way failed, check
+      `ccze_default_plugin', and try loading that one.
+    * doc/ccze-plugin.7.in: Document ccze_plugin_name_get and
+      CCZE_DEFINE_PLUGINS.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-227
+
+M	ChangeLog
+M	doc/ccze-plugin.7.in
+M	src/Makefile.in
+M	src/ccze-plugin.c
+M	src/ccze-private.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit de2aac27055203b5627bb50b962a290afa2f016a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 12 20:21:52 2003 +0000
+
+    Support loading multiple plugins from a single file
+    
+    * src/ccze.h (CCZE_DEFINE_PLUGINS): New macro.
+    * src/ccze-plugins.c (_ccze_plugin_load): Take a `recurse'
+      argument. Do not check multiple plugins if it is off. Also, before
+      loading a plugin, check if it is loaded already. If the plugin
+      opening succeeds, but the _info symbol is not found, defer bailing
+      out. After loaded the default plugin, or deferred exiting, check if
+      there are more plugins, and load them too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-226
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze.h
+
+commit c66e3ee5fdaadf3a59fe7fba78cd7867c444f7ac
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 12 16:23:33 2003 +0000
+
+    Testsuite overhaul
+    
+    * testsuite/defs: Support VERBOSE=1 - echoing which test it runs, and a
+      description - and VERBOSE=* - the old behaviour.
+    * testsuite/do-test: Check for the ${testname}.in file in both the
+      objdir, and the sourcedir.
+    * testsuite/exim.in: Removed.
+    * testsuite/exim.ok: Likewise.
+    * testsuite/apm.in: Likewise.
+    * testsuite/apm.ok: Likewise.
+    * testsuite/color.test: Likewise.
+    * testsuite/bug-wnum.test: New test, extracted from the former
+      color.test.
+    * testsuite/bug-procmailsubj.test: Likewise.
+    * testsuite/procmail.in: Renamed to...
+    * testsuite/bug-procmailsubj.in: ...this.
+    * testsuite/procmail.ok: Renamed to...
+    * testsuite/bug-procmailsubj.ok: ...this.
+    * testsuite/bug-wnum.test: New test, extracted from the former
+      color.test.
+    * testsuite/bug-sysrepeat.test: Likewise.
+    * testsuite/syslog.in: Renamed to...
+    * testsuite/bug-sysrepeat.in: ...this.
+    * testsuite/syslog.ok: Renamed to...
+    * testsuite/bug-sysrepeat.ok: ...this.
+    * testsuite/Makefile.in (TESTS): Updated according to the above
+      changes.
+      (TEST_IO): New variable.
+      (EXTRA_DIST): Compute dynamically using ${TEST_IO}.
+    * testsuite/version.test: Added DESCRIPTION.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-225
+
+M	ChangeLog
+M	testsuite/Makefile.in
+D	testsuite/apm.in
+D	testsuite/apm.ok
+R100	testsuite/procmail.in	testsuite/bug-procmailsubj.in
+R100	testsuite/procmail.ok	testsuite/bug-procmailsubj.ok
+C071	testsuite/version.test	testsuite/bug-procmailsubj.test
+R100	testsuite/syslog.in	testsuite/bug-sysrepeat.in
+R100	testsuite/syslog.ok	testsuite/bug-sysrepeat.ok
+C074	testsuite/version.test	testsuite/bug-sysrepeat.test
+R055	testsuite/color.test	testsuite/bug-wnum.test
+M	testsuite/defs
+M	testsuite/do-test
+D	testsuite/exim.in
+D	testsuite/exim.ok
+M	testsuite/version.test
+
+commit 34c70052c161d07d00aa7bef7faa91708cde9ab0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Mar 11 08:14:43 2003 +0000
+
+    ccze_getsubopt() redesign
+    
+    * configure.ac: Lift the suboptarg check from Thy, and drop the
+      previous getsubopt() checks.
+    * src/ccze-compat.h (ccze_getsubopt): Define this unconditionally.
+    * src/ccze-compat.c [HAVE_GETSUBOPT] (ccze_getsubopt): New function.
+      [!HAVE_GETSUBOPT] (getsubopt): Renamed to...
+      [!HAVE_GETSUBOPT] (ccze_getsubopt): ...this.
+    * src/ccze.c (parse_opt): Updated to new ccze_getsubopt calling
+      conventions.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-224
+
+M	ChangeLog
+M	configure.ac
+M	src/ccze-compat.c
+M	src/ccze-compat.h
+M	src/ccze.c
+
+commit 29aec5da7f0cbb206fef1a9298291d3790f94c7a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 8 11:39:34 2003 +0000
+
+    Fixed src/ccze.o dependencies
+    
+    * src/Makefile.in (ccze.o): Depend on ${top_srcdir}/ChangeLog too. So it
+      picks up the new version number ASAP after a commit.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-223
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit ad8b62d342639a81600489ab20027d38dbb467ba
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Mar 8 10:30:23 2003 +0000
+
+    Fixed a minor word coloring bug
+    
+    * src/ccze-wordcolor (ccze_wordcolor_setup): Changed the `reg_pre' and
+      `reg_post' regexps to be less greedy, and work even if the matched
+      string is shorter than three characters.
+    * testsuite/bug-wnum.in: New test-case input from Mark Szabo. Tests
+      for the problem mentioned and fixed by the above change.
+    * testsuite/bug-wnum.ok: The expected output from the test case.
+    * testsuite/color.test (SUBTESTS): Added bug-wnum.
+      (SUBTEST_PLUGINS): Added bug-wnum:syslog.
+    * testsuite/Makefile.in (EXTRA_DIST): Added bug-wnum.in and bug-wnum.ok.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-222
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+M	testsuite/Makefile.in
+A	testsuite/bug-wnum.in
+A	testsuite/bug-wnum.ok
+M	testsuite/color.test
+
+commit b50475d605e17c9ef70ed627f286925bb5ebd86d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Mar 6 16:46:01 2003 +0000
+
+    mod_proftpd
+    
+    * src/mod_proftpd.c: New file.
+    * ccze.plugins: Added proftpd.
+    * doc/ccze.1.in (PLUGINS): Mention it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-221
+
+M	ChangeLog
+M	ccze.plugins
+M	doc/ccze.1.in
+A	src/mod_proftpd.c
+
+commit b411dafecf9142557d88285f21a69435b6afcf35
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Mar 6 08:33:10 2003 +0000
+
+    New, non-settable colors
+    
+    * src/ccze.h (ccze_color_t): Added CCZE_COLOR_STATIC_*.
+    * src/ccze-color.c (ccze_color_keyword_map): Added them to the table.
+      (ccze_color_init): Initialise them.
+    * src/ccze-dump.c (ccze_dump_color_hidden): New function.
+      (main): Skip one iteration of the loop, if the color is hidden.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-220
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-dump.c
+M	src/ccze.h
+
+commit 42ab234ad0986fbbc10835164345d8d72915347c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Mar 6 08:12:17 2003 +0000
+
+    make all-recursive, clean and distclean in testsuite/ too
+    
+    * Makefile.in (all-recursive): Descend into testsuite too.
+      (clean): Likewise.
+      (distclean): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-219
+
+M	ChangeLog
+M	Makefile.in
+
+commit 4422098cde3ce3c0fbc6fb517b8f5f54e66dbe66
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Mar 6 08:03:55 2003 +0000
+
+    Support non-settable colors
+    
+    * src/ccze-color.c (CCZE_KEYWORD_R): New macro.
+      (CCZE_KEYWORD): Use it.
+      (CCZE_KEYWORD_H): New macro.
+      (ccze_color_keyword_t): Added a ->settable member.
+      (ccze_color_keyword_lookup): Renamed and made it a wrapper of...
+      (_ccze_color_keyword_lookup): ...this.
+      (_ccze_colorname_map_lookup): Use _ccze_color_keyword_lookup ().
+      (ccze_color_parse): Likewise.
+    
+    This will allow us stuff like ccze_addstr (CCZE_COLOR_STATIC_BLUE,
+    "Blah") in the near future...
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-218
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit ab5650ca15be7ebb6328c29a50e869856404793b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 5 20:38:10 2003 +0000
+
+    Got rid of PLUGIN_LIBPATH
+    
+    * src/ccze-plugin.c [PLUGIN_LIBPATH]: Got rid of this ancient relic. Use
+      PKGLIBDIR instead.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-217
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit cf7c694d63165820c100a1a3d5b8f4432637b88d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 5 15:57:02 2003 +0000
+
+    CCZE_ABI_VERSION
+    
+    * src/ccze.h (CCZE_ABI_VERSION): New constant.
+      (ccze_plugin_t): The first member is now an int: abi_version.
+    * src/ccze-plugin.c (_ccze_plugin_load): Do not load the plugin if
+      abi_version does not match.
+    
+    This is a safety barrier. Old plugins had a `void *dlhandle' as their
+    first member, initialised to NULL, thus resulting in a zero abi_version
+    when opened with this later CCZE, therefore, getting rejected instead of
+    causing a segfault later on.
+    
+    Obviously, when the structure changes incompatibly, CCZE_ABI_VERSION
+    will get bumped.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-216
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze.h
+
+commit d17de3b8704df13f0782bb1677f7b712d8cba9dd
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 5 15:10:03 2003 +0000
+
+    Fixed good/bad word colorising
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_process_one): Unrolled the `if
+     (slookup)' branch, it was a bad idea. (This reverts patch 179).
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-215
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 55bdca70cccf6ea03bbe910abd509cfa60066b11
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 5 12:51:13 2003 +0000
+
+    Typo fixes
+    
+    * debian/control (Description): roboust -> robust.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-214
+
+M	ChangeLog
+M	debian/control
+
+commit 08a89e9c3eb6ef63859f33b484df940d8e0874ed
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Mar 5 12:46:16 2003 +0000
+
+    ccze_getsubopt
+    
+    * configure.ac: Check for FreeBSD and Linux-style getsubopt().
+    * src/ccze.c (ccze_getsubopt): New function.
+      (parse_opt): Use ccze_getsubopt().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-213
+
+M	ChangeLog
+M	configure.ac
+M	src/ccze.c
+
+commit 3027cb18d3caa582ee29ef72c51d9137305e3be2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Mar 4 18:54:42 2003 +0000
+
+    The `Avatar' release
+    
+      (Instrumental)
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-212
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit 5b2debbde6f673fe2b08c6182a39de70be26efa2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Mar 4 18:51:24 2003 +0000
+
+    Manual page corrections
+    
+    * doc/ccze.1.in: Escaped some more `-' chars.
+    * doc/ccze-cssdump.1.in: Likewise.
+    * doc/ccze-plugin.7.in: Likewise, and corrected the section too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-211
+
+M	ChangeLog
+M	doc/ccze-cssdump.1.in
+M	doc/ccze-plugin.7.in
+M	doc/ccze.1.in
+
+commit 07a8db13f870ff5feee5b733207e2cadec4840c7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Mar 4 17:07:25 2003 +0000
+
+    mod_procmail fix
+    
+    * src/mod_procmail.c (ccze_procmail_setup): Added a missing `?' to the
+      regexps, so it catches stuff for real.
+    * testsuite/procmail.in: Added a test case that triggered the bug,
+      thanks to Morten Brix Pedersen.
+    * testsuite/procmail.ok: And added the expected, good output.
+    * testsuite/Makefile.in (EXTRA_DIST): Include them.
+    * testsuite/color.test (SUBTESTS): Run the new test.
+    * THANKS: Added Morten Brix Pedersen.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-210
+
+M	ChangeLog
+M	THANKS
+M	src/mod_procmail.c
+M	testsuite/Makefile.in
+M	testsuite/color.test
+A	testsuite/procmail.in
+A	testsuite/procmail.ok
+
+commit 3d3b216747e1b53230e778f3dabeb3537b56f639
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Mar 4 17:02:03 2003 +0000
+
+    Documentation update
+    
+    * doc/ccze-plugin.7.in (SYNOPSIS): Added all the important function
+      definitions.
+      (DISPLAY METHODS): Document the display methods.
+      (HELPER METHODS): Document the helper methods.
+    * doc/ccze.1.in (OPTIONS): Document that -a's arguments are whitespace
+      separated.
+      (NOTES): Removed this section.
+    * TODO: Updated.
+    * FAQ: Added a section about extensions.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-209
+
+M	ChangeLog
+M	FAQ
+M	TODO
+M	debian/rules
+M	doc/ccze-plugin.7.in
+M	doc/ccze.1.in
+
+commit 899ebffb71bb7abf83298bfac702f1a4f6b94216
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Mar 3 18:20:30 2003 +0000
+
+    Recompute subjlen
+    
+    * src/ccze.c (ccze_main): Recompute subjlen before calling
+      ccze_plugin_run. Fixes a rare output corruption.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-208
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 2e219fc628b3f139c3f647cad6d698d79cbd18f1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Mar 3 15:23:09 2003 +0000
+
+    CCZE_PLUGIN_TYPE_ANY
+    
+    * src/ccze.h (ccze_plugin_type_t): Added CCZE_PLUGIN_TYPE_ANY.
+    * src/ccze-plugin.c (ccze_plugin_run): Run the plugin if it is _ANY,
+      regardless of `type'.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-207
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze.h
+
+commit 5036aeb67ab5c9cf84c4862ea285d96ec51f70d7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Mar 3 14:15:45 2003 +0000
+
+    configure.ac update
+    
+    * configure.ac: Updated, based on autoscan results.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-206
+
+M	ChangeLog
+M	configure.ac
+
+commit 427f142522fed41c83d255302ac92134b637a278
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Mar 3 13:47:10 2003 +0000
+
+    ccze_color_keyword_lookup()
+    
+    * src/ccze.h (ccze_color_keyword_lookup): New public prototype.
+    * src/ccze-color.c (_ccze_color_keyword_lookup): Renamed to...
+      (ccze_color_keyword_lookup): ..this, and removed staticness.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-205
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze.h
+
+commit c22c401d704d282649b00769c0b359e7362e3ae7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Mar 2 18:18:12 2003 +0000
+
+    Minor plugin-argument cleanup
+    
+    * src/ccze.c (parse_opt): Removed a debugging printf.
+    * src/ccze-plugin.c (_ccze_plugin_load): Do not touch ->argv, so we can
+      check for NULL in plugins.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-204
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze.c
+
+commit c819c9768f780e03408892ac7b3fa94217f2c5de
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Mar 2 17:25:05 2003 +0000
+
+    Fixed ccze.1.in
+    
+    * doc/ccze.1.in (PLUGINS): Fixed. There were a bunch of roff errors.
+      (well, not errors.. it just did not format right)
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-203
+
+M	ChangeLog
+M	doc/ccze.1.in
+
+commit b812749f03426d5b55dd95044942e0fe575eab21
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Mar 2 17:20:58 2003 +0000
+
+    Support for passing arguments to plugins
+    
+    * src/ccze.h (ccze_plugin_t): Added an ->argv member.
+      (CCZE_DEFINE_PLUGIN): Modified accordingly.
+      (ccze_plugin_argv_get): New function prototype.
+    * src/ccze-private.h (ccze_plugin_argv_init): New function prototype.
+      (ccze_plugin_argv_set): Likewise.
+      (ccze_plugin_argv_finalise): Likewise.
+    * src/ccze-plugin.c (ccze_plugin_argv_init): New function.
+      (ccze_plugin_argv_set): Likewise.
+      (ccze_plugin_argv_finalise): Likewise.
+      (ccze_plugin_argv_get): Likewise.
+      (_ccze_plugin_load): Initialise ->argv.
+      (_ccze_plugin_find): New function.
+      (_ccze_plugin_loaded): Use it.
+      (ccze_plugin_shutdown): Free ->argv.
+    * src/ccze.c (options): Added --argument.
+      (parse_opt): Handle it.
+      (ccze_main): Call ccze_plugin_init() earlier, and
+      ccze_plugin_argv_finalise() after loading the plugins.
+      (main): Call ccze_plugin_argv_init().
+    * src/Makefile.in (ccze-dump): Depend on ccze-color.c too.
+      (ccze-cssdump): Likewise.
+    * doc/ccze.1: Documented --argument.
+    * doc/ccze-plugin.7.in: Documented ccze_plugin_argv_get().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-202
+
+M	ChangeLog
+M	doc/ccze-plugin.7.in
+M	doc/ccze.1.in
+M	src/Makefile.in
+M	src/ccze-plugin.c
+M	src/ccze-private.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit 737c66a40b4dccc7b219988937a6d2107d784282
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Feb 25 09:38:40 2003 +0000
+
+    FAQ
+    
+    * FAQ: New file.
+    * Makefile.in (EXTRA_DIST): Added it.
+    * ccze.spec.in (%files): Include it among the %docs.
+    * debian/rules (install): Install it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-201
+
+M	ChangeLog
+A	FAQ
+M	Makefile.in
+M	ccze.spec.in
+M	debian/rules
+
+commit c5a6b322fd7ee085a1b4f6f2b8230195d511b506
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 21 10:41:59 2003 +0000
+
+    The `Enigma of the Absolute' release
+    
+      Across the sea lies the fountain of renewal
+      Where you will see the whole cause of your loneliness
+      Can be measured in dreams that transcend all these lies
+      And I wish and I pray that there may come a day
+      For a saviour's arms...
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-200
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit 9609021638fb4cded5c33cf19f7f8b282cb30023
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 21 09:09:02 2003 +0000
+
+    Minor mem-leak fix in argp_parse
+    
+    * src/ccze-compat.c [HAVE_GETOPT_LONG] (argp_parse): Free `longopts'.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-199
+
+M	ChangeLog
+M	src/ccze-compat.c
+
+commit 3e56730feca7089c468399ad2114819699dbb2f5
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 17:32:51 2003 +0000
+
+    Fixed a malloc issue
+    
+    * src/ccze-compat.c [HAVE_GETOPT_LONG] (argp_parse): Use ccze_calloc,
+      not ccze_malloc.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-198
+
+M	ChangeLog
+M	src/ccze-compat.c
+
+commit 7d98417ec0c4cdb2293716594dbc717005eaf0ac
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 17:03:45 2003 +0000
+
+    Support long options everywhere, where getopt_long is present
+    
+    * configure.ac: Check for getopt_long in libc and libgnugetopt.
+    * src/ccze-compat.c (argp_parse): Use getopt_long, if present. Also
+      format the --help message a bit better.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-197
+
+M	ChangeLog
+M	configure.ac
+M	src/ccze-compat.c
+
+commit f8ba78bc87f8ee07cf73f359fcc50b5989e36ea2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 15:28:00 2003 +0000
+
+    .spec update
+    
+    * ccze.spec.in: Use %{buildroot}, %configure and %makeinstall. While
+      there, copied the long description from debian/control.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-196
+
+M	ChangeLog
+M	ccze.spec.in
+
+commit 1ae806e197a339c3c5337a8bddbfa9826c817f7c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 15:16:11 2003 +0000
+
+    Fixed make dist from an objdir
+    
+    * Rules.mk.in (distdir): Copy from the current dir, if the file does not
+      exist in ${srcdir}.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-195
+
+M	ChangeLog
+M	Rules.mk.in
+
+commit f682b62e0381ac2d01fcf1ee58602a6ca264516e
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 15:06:21 2003 +0000
+
+    Fixed a typo
+    
+    * src/Makefile.in (ccze-compat.o): Depend on .c, not on itself.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-194
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 3ff2f64bb5e1a74e7a2ab150720894e4b611d788
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 15:01:37 2003 +0000
+
+    Add a generator meta-tag to the HTML output
+    
+    * src/ccze.c (ccze_main): Add a generator meta-tag to the HTML output.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-193
+
+M	ChangeLog
+M	src/ccze.c
+
+commit c8bed0b50614e3eaaf592374d3a48ffcd2ef654d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 20 11:40:57 2003 +0000
+
+    True64 port
+    
+    * src/ccze.h: #include <ncurses.h>
+      (ccze_malloc): New prototype.
+      (ccze_realloc): Likewise.
+      (ccze_calloc): Likewise.
+    * src/ccze-compat.c: #include <ccze.h>
+      (ccze_malloc): New function.
+      (ccze_realloc): Likewise.
+      (ccze_calloc): Likewise.
+    
+    All malloc/realloc/calloc users updated.
+    
+    * src/ccze-wordcolor.c: Do not #include <curses.h>, ccze.h does that
+      for us.
+    * src/Makefile.in (ccze-compat.o): New dependency-target.
+    * THANKS: Added Erik Braun.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-192
+
+M	ChangeLog
+M	THANKS
+M	src/Makefile.in
+M	src/ccze-compat.c
+M	src/ccze-dump.c
+M	src/ccze-plugin.c
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit c7c7ea5ace1983a0679247f0d5b6d7ffa33706f0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 13 17:59:10 2003 +0000
+
+    THANKS update
+    
+    * THANKS: Added a few people.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-191
+
+M	ChangeLog
+M	THANKS
+
+commit 83d4f01bf0e970668426399b57654952d63604e9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 13 17:46:33 2003 +0000
+
+    unLinuxize version.test
+    
+    * testsuite/version.test: Use `-V' instead of `--version'.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-190
+
+M	ChangeLog
+M	testsuite/version.test
+
+commit 05ae2205f7b922a9ebc23bfe281f11e77a2d1b30
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 13 17:43:10 2003 +0000
+
+    Fixed strndup() implementation.
+    
+    * src/ccze-compat.c [!HAVE_STRNDUP] (strndup): NULL-terminate the
+      string.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-189
+
+M	ChangeLog
+M	src/ccze-compat.c
+
+commit 1a7ea63086d10d415114d0e1bd8067f56c5893c4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 13 17:20:03 2003 +0000
+
+    New getline() implementation from Mailutils
+    
+    * configure.ac: Check for getdelim() too.
+    * src/ccze-compat.h [!HAVE_GETDELIM] (getdelim): New prototype.
+    * src/ccze-compat.c [!HAVE_GETLINE] (getline): New implementation.
+      [!HAVE_GETDELIM] (getdelim): New function.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-188
+
+M	ChangeLog
+M	configure.ac
+M	src/ccze-compat.c
+M	src/ccze-compat.h
+
+commit 7d618c50852524fbc670b1c9a6905ee8fe9f1f23
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Feb 13 16:22:32 2003 +0000
+
+    Use pcre-config
+    
+    * configure.ac: Disabled the pcre.h and pcre/pcre.h tests, likewise the
+      -lpcre test. Use pcre-config instead.
+    * src/Makefile.in (ALL_CFLAGS): Added @PCRE_CFLAGS@.
+      (LIBS): Added @PCRE_LIBS@.
+    * src/ccze.h: #include <pcre.h>, unconditionally.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-187
+
+M	ChangeLog
+M	configure.ac
+M	src/Makefile.in
+M	src/ccze.h
+
+commit bbe1440224e0d9156eb5a80d5ae3b17143ca16a2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 22:44:25 2003 +0000
+
+    Use stringification in CCZE_DEFINE_PLUGIN.
+    
+    * src/ccze.h (CCZE_DEFINE_PLUGIN): Use stringification, and remove the
+      quoted-name argument. All users updated.
+    * doc/ccze-plugin.7.in: Reflect the above change.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-186
+
+M	ChangeLog
+M	doc/ccze-plugin.7.in
+M	src/ccze.h
+M	src/mod_apm.c
+M	src/mod_distcc.c
+M	src/mod_exim.c
+M	src/mod_fetchmail.c
+M	src/mod_httpd.c
+M	src/mod_icecast.c
+M	src/mod_oops.c
+M	src/mod_php.c
+M	src/mod_postfix.c
+M	src/mod_procmail.c
+M	src/mod_squid.c
+M	src/mod_sulog.c
+M	src/mod_super.c
+M	src/mod_syslog.c
+M	src/mod_ulogd.c
+M	src/mod_vsftpd.c
+M	src/mod_xferlog.c
+
+commit 26782b32a7ff6b58697b287aec32a6dd9010ce3e
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 22:33:49 2003 +0000
+
+    Corrected ccze-plugin.7 SYNOPSIS
+    
+    * doc/ccze-plugin.7 (SYNOPSIS): Include existing, non-obsolete headers
+      only. Also moved the CCZE_DEFINE_PLUGIN call to the end.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-185
+
+M	ChangeLog
+M	doc/ccze-plugin.7.in
+
+commit 0a62c51044f283c4c9be0bb82719421842e3c600
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 22:13:43 2003 +0000
+
+    Fixed an ICC warning
+    
+    * src/ccze.c (ccze_addstr_internal): Use a temporary variable to hold
+      the result of ccze_color_lookup_name().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-184
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 3f1b1d981211054345a9fbd14381f6eaba9e3794
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 21:57:46 2003 +0000
+
+    mod_distcc
+    
+    * src/mod_distcc.c: New file.
+    * ccze.plugins: Added distcc.
+    * doc/ccze.1.in: Documented it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-183
+
+M	ChangeLog
+M	ccze.plugins
+M	doc/ccze.1.in
+A	src/mod_distcc.c
+
+commit f12dddddc6abb242f612f3909248411d33b79dd5
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 18:56:11 2003 +0000
+
+    Include some more files
+    
+    * testsuite/Makefile.in (EXTRA_DIST): Added defs and do-test.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-182
+
+M	ChangeLog
+M	testsuite/Makefile.in
+
+commit 3c73a529cdb6879ab05b6f8f2e9ab4ef3cbe6d72
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 18:51:31 2003 +0000
+
+    argp fixes
+    
+    * src/ccze.c (options): Removed the first NULL entry.
+    * src/ccze-compat.h (OPTION_HIDDEN): New constant.
+    * src/ccze-compat.c (argp_parse): Do not treat -h specially, it is used
+      by something else. Also, do not show hidden options in -h output.
+      As a consequence, all references to -h were changed to -?.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-181
+
+M	ChangeLog
+M	src/ccze-compat.c
+M	src/ccze-compat.h
+M	src/ccze.c
+
+commit 42ed283dbe15de551c77958893c62b0d8979cee6
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 12 17:53:59 2003 +0000
+
+    Fixed a typo
+    
+    * testsuite/Makefile.in (EXTRA_DIST): It is `exim.ok', not `exim.out'.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-180
+
+M	ChangeLog
+M	testsuite/Makefile.in
+
+commit 7108c9de54c50ca49c654c43d6579b2f9b7c530e
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Feb 10 17:49:41 2003 +0000
+
+    -o nolookups fix
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_process_one): Wrap all the
+      slookup stuff in one if branch. Solves the -d -o nolookups problem.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-179
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 4e57b4428150dd277b7d19a29776aa3fd1c01bf4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Feb 10 17:42:39 2003 +0000
+
+    Support -p foo,bar
+    
+    * src/ccze.c (parse_opt): Use getsubopt when parsing -p.
+    * testsuite/color.test: Modified to use this new feature.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-178
+
+M	ChangeLog
+M	src/ccze.c
+M	testsuite/color.test
+
+commit 2efc3fb68d9ad39823454f18029604e1877e6e4a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Feb 10 09:46:56 2003 +0000
+
+    Exim added to the testsuite
+    
+    * testsuite/exim.in: New file.
+    * testsuite/exim.out: Likewise.
+    * testsuite/Makefile.in (EXTRA_DIST): Added them.
+    * testsuite/color.test (SUBTESTS): Added exim.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-177
+
+M	ChangeLog
+M	testsuite/Makefile.in
+M	testsuite/color.test
+A	testsuite/exim.in
+A	testsuite/exim.ok
+
+commit 529f3913ddd0fa23cd7b8672f0a2cd05dd1368ba
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Feb 10 09:18:11 2003 +0000
+
+    New tests
+    
+    * testsuite/syslog.test: Renamed to...
+    * testsuite/color.test: ..this. Also hacked to run multiple tests in a
+      row.
+    * testsuite/apm.in: New file.
+    * testsuite/apm.ok: Likewise.
+    * testsuite/Makefile.in (EXTRA_DIST): Added apm.in and apm.ok.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-176
+
+M	ChangeLog
+M	testsuite/Makefile.in
+A	testsuite/apm.in
+A	testsuite/apm.ok
+R065	testsuite/syslog.test	testsuite/color.test
+
+commit 2d81b2606817573fc485ea4f1464da51666022b0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Feb 10 08:44:49 2003 +0000
+
+    Made the testsuite use -d.
+    
+    * testsuite/syslog.ok: Regenerated output.
+    * testsuite/syslog.test: Updated.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-175
+
+M	ChangeLog
+M	testsuite/syslog.ok
+M	testsuite/syslog.test
+
+commit b57ee07835c77c7924f97d14b65bec6609caa250
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Feb 10 08:35:44 2003 +0000
+
+    --debug
+    
+    * src/ccze-private.h (ccze_config_t): New member: `debug'.
+    * src/ccze.c (ccze_config): Initialise it to zero.
+      (options): Add --debug.
+      (parse_opt): Parse it.
+      (ccze_newline): Handle ccze_config.debug.
+      (ccze_addstr_internal): Likewise.
+      (sigint_handler): Likewise.
+      (ccze_main): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-174
+
+M	ChangeLog
+M	src/ccze-private.h
+M	src/ccze.c
+
+commit e4eb6108db5c113b3e78556719fbbfc1c77d60e1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Feb 9 19:08:49 2003 +0000
+
+    Fixed a compile warning
+    
+    * src/ccze-plugin.c (_ccze_plugin_allow): `i' should be `int', not
+      `size_t'. ccze_config.pluginlist_len was changed a few commits ago.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-173
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit 4a5c0035c80ff26cf1187c2f807c163dd6c503c9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Feb 9 18:49:31 2003 +0000
+
+    First shot at a testsuite
+    
+    * configure.ac (AC_OUTPUT): Added testsuite/Makefile.
+    * Rules.mk.in (DISTFILES): Include ${TESTS}.
+    * Makefile.in (distdir): Make distdir in testsuite/ too.
+      (check): New target.
+    * testsuite/*: New files.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-172
+
+M	ChangeLog
+M	Makefile.in
+M	Rules.mk.in
+M	configure.ac
+A	testsuite/Makefile.in
+A	testsuite/defs
+A	testsuite/do-test
+A	testsuite/syslog.in
+A	testsuite/syslog.ok
+A	testsuite/syslog.test
+A	testsuite/version.test
+
+commit cf6f9f8057dcb8359b4e1e16095c6f6b03363398
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Feb 9 13:57:34 2003 +0000
+
+    The `Mesmerism' release.
+    
+      Remain in light
+      Renounce your fears
+      For you have been
+      Mesmerized
+    
+    * configure.ac: Call ourselves -stable.
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    * debian/control (Description): Removed trailing dot from short
+      description.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-171
+
+M	ChangeLog
+M	NEWS
+M	configure.ac
+M	debian/changelog
+M	debian/control
+
+commit af42312820e63ee55ded992a8301026ff53e1348
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Feb 9 13:02:02 2003 +0000
+
+    colorize built from another source
+    
+    * debian/control (ccze): Replaces: colorize (<= 0.3.1-2)
+      (colorize): Removed.
+    * debian/rules: Removed colorize building code.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-170
+
+M	ChangeLog
+M	debian/control
+M	debian/rules
+
+commit e0c9fc154682ede9a642943eb373b597838b378f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Feb 8 22:53:05 2003 +0000
+
+    Fixed mod_ulogd.
+    
+    * src/mod_ulogd.c (ccze_ulogd_process): In case there is a field=value
+      pair, put a space after the value.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-169
+
+M	ChangeLog
+M	src/mod_ulogd.c
+
+commit ba05a252c4bc57591be5ccc65c5046df91cb66e4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Feb 8 16:47:47 2003 +0000
+
+    mod_oops
+    
+    * src/mod_oops.c: New file.
+    * ccze.plugins: Added oops.
+    * doc/ccze.1.in (PLUGINS): Document it.
+    * TODO: Removed relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-168
+
+M	ChangeLog
+M	TODO
+M	ccze.plugins
+M	doc/ccze.1.in
+A	src/mod_oops.c
+
+commit 18cc0162975997c8435c5f58b9b5d7c707dbf80f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 23:33:44 2003 +0000
+
+    Optional building of compatibility package
+    
+    * debian/rules (COMPAT): If DEB_BUILD_OPTIONS contains compat, set it to
+      binary-colorize, otherwise empty.
+      (COMPAT_VERSION): New variable.
+      (binary-indep): Depend on ${COMPAT} and use ${COMPAT_VERSION}.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-167
+
+M	ChangeLog
+M	debian/rules
+
+commit b3cb8c6afe83e0dabbbe743b2d3035a838aecbc6
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 23:15:44 2003 +0000
+
+    icecast/usage.log colorisation
+    
+    * src/mod_icecast.c (ccze_icecast_usage_process): New function.
+      (ccze_icecast_setup): Initialise reg_icecast_usage.
+      (ccze_icecast_shutdown): Free it.
+      (ccze_icecast_handle): Hande usage.log first.
+    * doc/ccze.1.in (PLUGINS): Corrected a typo. It is usage.log, not
+      user.log
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-166
+
+M	ChangeLog
+M	doc/ccze.1.in
+M	src/mod_icecast.c
+
+commit 8b7ce34cd1bfb58bdb25a0074c4d7b6ee6640050
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 22:43:56 2003 +0000
+
+    Splitted off ALL_PLUGINS from configure.ac
+    
+    * configure.ac (ALL_PLUGINS): Moved the list to...
+    * ccze.plugins: ...here.
+    * Makefile.in (DISTFILES): Include ccze.plugins.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-165
+
+M	ChangeLog
+M	Makefile.in
+A	ccze.plugins
+M	configure.ac
+
+commit 1c97b2f6fadb1ad65cfeee4f83486999ec924120
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 22:27:20 2003 +0000
+
+    Fixed mod_php copyright year
+    
+    * src/mod_php.c: Fixed the copyright year, it is 2003 only.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-164
+
+M	ChangeLog
+M	src/mod_php.c
+
+commit b6532296772cc77addd226e4926d78c4a4a51402
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 22:20:35 2003 +0000
+
+    Fixed CSS
+    
+    * src/ccze-color.c (ccze_csscolor_normal_map): red->darkred.
+      (ccze_csscolor_bold_map): lightred->red.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-163
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit ff17bf85db62a12bffa3d108a9e4ce0d0d23406b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 22:16:59 2003 +0000
+
+    mod_icecast
+    
+    * src/mod_icecast.c: New file.
+    * configure.ac (ALL_PLUGINS): Added icecast.
+    * doc/ccze.1.in (PLUGINS): Added a note about it.
+    * TODO: Removed relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-162
+
+M	ChangeLog
+M	TODO
+M	configure.ac
+M	doc/ccze.1.in
+A	src/mod_icecast.c
+
+commit b6b79f30ec9a1a1fc9c0d97914d1dc1112da2f74
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 21:44:25 2003 +0000
+
+    Make builtin plugins behave correctly when -p is used.
+    
+    * src/ccze-private.h (ccze_config_t): New typedef.
+    * src/ccze-plugin.c (_ccze_plugin_allow): New function.
+      (ccze_plugin_add): Use it.
+    * src/ccze.c (ccze_config_t): Use the new ccze_config_t type, and do not
+      make it static.
+      (ccze_main): When loading selected plugins, use a temporary variable,
+      don't clobber ccze_plugin.pluginlist_len.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-161
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze-private.h
+M	src/ccze.c
+
+commit a1041d9601fb89e538e827e861784560bf5c44bc
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 21:10:59 2003 +0000
+
+    mod_php
+    
+    * configure.ac (ALL_PLUGINS): Added php.
+    * src/mod_php.c: New file.
+    * src/ccze.h (ccze_color_t): Added CCZE_COLOR_KEYWORD.
+    * src/ccze-color.c (ccze_color_keyword_map): Added `keyword'.
+      (ccze_color_init): Initialize CCZE_COLOR_KEYWORD to bold yellow.
+    * src/ccze-wordcolor.c (words_error): Added fatal.
+    * doc/ccze.1 (PLUGINS): Mention mod_php.
+    * TODO: Removed relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-160
+
+M	ChangeLog
+M	TODO
+M	configure.ac
+M	doc/ccze.1.in
+M	src/ccze-color.c
+M	src/ccze-wordcolor.c
+M	src/ccze.h
+A	src/mod_php.c
+
+commit 1be9833b95e915777f5ddd47c365039083c0fe3a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 20:08:51 2003 +0000
+
+    Fixed building in an objdir
+    
+    * Makefile.in (ccze.spec): Depend on Rules.mk, not
+      ${top_srcdir}/Rules.mk.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-159
+
+M	ChangeLog
+M	Makefile.in
+
+commit 426055fb9566c708f6fe90839a83fd55a97a01b0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 15:08:21 2003 +0000
+
+    colorize->ccze transition
+    
+    * debian/control: Added a dummy colorize control info.
+    * debian/rules (binary-colorize): New target.
+      (clean): remove ${PKGDIR_D} too.
+      (.PHONY): Added binary-colorize.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-158
+
+M	ChangeLog
+M	debian/control
+M	debian/rules
+
+commit 19dec70aaa398230054526077be647f8804fbfe7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Feb 7 08:10:52 2003 +0000
+
+    Description improvement
+    
+    * debian/control (Description): Rewrote.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-157
+
+M	ChangeLog
+M	debian/control
+
+commit 986a419a09c16d2a80398bdecebf364eac8db7cf
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 5 13:44:30 2003 +0000
+
+    Another makefile fix
+    
+    * src/Makefile.in (ccze-builtins.c): Surround the for cycles with an
+      ifneq. Required for older, buggy bashes.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-156
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit f497e8c4b4823b8af214ad88641d2edf3422b4af
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 5 08:20:47 2003 +0000
+
+    Makefile fixes
+    
+    * Makefile.in (ccze.spec): Use ${srcdir}/$@.
+    * doc/Makefile.in (% [%.in]): Likewise.
+    * src/Makefile.in (ccze-builtins.c): Do not use echo -e, but multiple
+      echos. Allows building with /bin/ash.
+    
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-155
+
+M	ChangeLog
+M	Makefile.in
+M	doc/Makefile.in
+M	src/Makefile.in
+
+commit 6309a3ccf03aadd56338b47889d70cff9b359e66
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 5 01:12:10 2003 +0000
+
+    THANKS update
+    
+    * THANKS: Added Alan Schmitt.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-154
+
+M	ChangeLog
+M	THANKS
+
+commit 315822d89a49a6d2849348f6388ad2aa7529943c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Feb 5 01:03:23 2003 +0000
+
+    Transparency support
+    
+    * src/ccze.c (ccze_config): Added a `transparent', initialised to 1.
+      (parse_opt): Support it.
+      (ccze_main): If ccze_config.transparent is on, and
+      use_default_colors() returns OK, set colors[0] to -1, which appears
+      as transparent, in an appropriate XTerm.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-153
+
+M	ChangeLog
+M	doc/ccze.1.in
+M	src/ccze.c
+
+commit 87e6db7cbd6e484ca131da0ae3b0b27782f3da45
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Feb 4 17:26:12 2003 +0000
+
+    Fixed mod_xferlog's date regexp
+    
+    * src/mod_xferlog.c (ccze_xferlog_setup): Allow dates of the form
+      "Feb  4" not only "Feb 04".
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-152
+
+M	ChangeLog
+M	src/mod_xferlog.c
+
+commit 890453b32c57145bab787d40293f6bddbf4f512a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Feb 4 17:20:22 2003 +0000
+
+    TODO update
+    
+    * TODO: Updated.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-151
+
+M	ChangeLog
+M	TODO
+
+commit bf2793f0413d4f424085b02c5b63c657e630471d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Feb 4 17:04:36 2003 +0000
+
+    The `Cardinal Sin' release.
+    
+      When all is said and done
+      It will be you who pays the price
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-150
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit 1afc138481a3a7ec02b22b2481f766b0c8244c79
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Feb 4 16:51:59 2003 +0000
+
+    SIGHUP handler
+    
+    * src/ccze.c (sigint_handler): Only do the freeing if sig is non-zero.
+      (sighup_handler): New function.
+      (ccze_main): Moved most of main() here.
+      (main): Use ccze_main().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-149
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 973bc1120d25aa942e2ed627a18c8729c74b19fb
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Feb 2 15:48:13 2003 +0000
+
+    Compatibility..
+    
+    * src/ccze.c: #include "ccze-compat.h"
+    * src/ccze-wordcolor.c: Likewise.
+    * src/mod_postfix.c: Likewise.
+    * src/mod_syslog.c: Likewise.
+    * src/mod_ulogd.c: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-148
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+M	src/mod_postfix.c
+M	src/mod_syslog.c
+M	src/mod_ulogd.c
+
+commit 029ec7b3ca5148a59431c82dcbd4da86c9b039d1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Feb 1 22:20:42 2003 +0000
+
+    Code cleanups
+    
+    * src/ccze-worcolor.c (ccze_wordcolor_process_one): Use a temporary
+      variable to hold the length of `host' and `ip' (in the hostip
+      branch)
+    * src/mod_postfix.c (_ccze_postfix_process_one): Likewise for `s' and
+      `field'.
+    
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-147
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+M	src/mod_postfix.c
+
+commit 9263a30c0720b5e9016ba19e86cb13a6ceb0fccf
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Jan 31 08:57:37 2003 +0000
+
+    Minor wordcolor fixes
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_setup): Allow dots in reg_hostip,
+      and `=' and '+' in reg_email and reg_msgid.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-146
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 065b1d466360c8f3325ff8c49cca623b7c6162a7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Jan 31 08:49:55 2003 +0000
+
+    Postfix colorizer fix
+    
+    * src/mod_postfix.c (ccze_postfix_setup): Modified the regexp to catch
+      `from=' too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-145
+
+M	ChangeLog
+M	src/mod_postfix.c
+
+commit f11383600f120604adf2ecf58a332aa1d09587d5
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 30 00:56:43 2003 +0000
+
+    reg_hostip fixup
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_setup): Modified reg_hostip to
+      match dotless hosts too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-144
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 85315e4b4f4d2ac22cfa960e97c6d50f30fbd5ff
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Jan 28 17:37:26 2003 +0000
+
+    mod_postfix
+    
+    * configure.ac (ALL_PLUGINS): Added postfix.
+    * src/mod_postfix.c: New file.
+    * doc/ccze.1.in (PLUGINS): Added a note about this.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-143
+
+M	ChangeLog
+M	configure.ac
+M	doc/ccze.1.in
+A	src/mod_postfix.c
+
+commit 386bde43f3eb4d00cf197631ebf368c25ddfe5ad
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Jan 28 17:16:52 2003 +0000
+
+    Word coloring enhancements and HTML-escaping
+    
+    * src/ccze.c (ccze_str_htmlencode): New function.
+      (ccze_addstr): Renamed to, and made it a wrapper around...
+      (ccze_addstr_internal): ...this. Use ccze_str_htmlencode().
+      (ccze_space): Use ccze_addstr_internal when adding a HTML space.
+    * src/ccze-wordcolor.c (ccze_wordcolor_process_one): Process
+      Message-ID and HOST[IP] stuff too. Do not ccze_space()!
+      (ccze_wordcolor_process): Use the ccze_space() here.
+      (ccze_wordcolor_setup): Setup _msgid and _hostid.
+      (ccze_wordcolor_shutdown): Free them.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-142
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+
+commit 2bca9af493e8a28713808dcd36f571c0e07eda78
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Jan 28 12:10:59 2003 +0000
+
+    mod_xferlog
+    
+    * configure.ac (ALL_PLUGINS): Added xferlog.
+    * src/ccze.h (ccze_color_t): Added CCZE_COLOR_FTPCODES.
+    * src/ccze-color.c (ccze_color_keyword_map): Recognise `ftpcodes'.
+      (ccze_color_init): Initialise [CCZE_COLOR_FTPCODES].
+    * doc/ccze.1.in (PLUGINS): Mention xferlog.
+    * TODO: Removed relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-141
+
+M	ChangeLog
+M	TODO
+M	configure.ac
+M	doc/ccze.1.in
+M	src/ccze-color.c
+M	src/ccze.h
+A	src/mod_xferlog.c
+
+commit 518815e61433021696b0ddcca5c3be2b4fa634ad
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Jan 28 11:16:07 2003 +0000
+
+    Cosmetic fixup
+    
+    Updated the internal filename reference in all the modules.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-140
+
+M	ChangeLog
+M	src/mod_apm.c
+M	src/mod_exim.c
+M	src/mod_fetchmail.c
+M	src/mod_httpd.c
+M	src/mod_procmail.c
+M	src/mod_squid.c
+M	src/mod_sulog.c
+M	src/mod_super.c
+M	src/mod_syslog.c
+M	src/mod_ulogd.c
+M	src/mod_vsftpd.c
+
+commit 5f1004b50c1fbe364bb8a31b4d6e338aac714239
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Jan 25 12:45:08 2003 +0000
+
+    .spec update
+    
+    * ccze.spec.in: Updated to include ccze.h.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-139
+
+M	ChangeLog
+M	ccze.spec.in
+
+commit 05cd4d7f6d67b5b0de0fd9ef0e916aeb42eff32a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Jan 24 09:50:02 2003 +0000
+
+    Documentation update
+    
+    * doc/ccze-plugin.7.in (EXAMPLE): Updated the #includes, to reflect the
+      recent reorganisation.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-138
+
+M	ChangeLog
+M	doc/ccze-plugin.7.in
+
+commit 3f81fac3cbe951c1143c5a64ea692736d6057a86
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Jan 24 09:44:17 2003 +0000
+
+    Install ccze.h.
+    
+    * Rules.mk.in (includedir): New substvar.
+    * src/Makefile.in (install): Install ccze.h
+      (uninstall): Uninstall it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-137
+
+M	ChangeLog
+M	Rules.mk.in
+M	src/Makefile.in
+
+commit da2cdfaed006c222564744e0aa3073743c146c12
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 23 18:12:40 2003 +0000
+
+    Internal cleanup, part two
+    
+    Renamed all modules to mod_<foo>.c, modified src/Makefile.in
+    accordingly.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-136
+
+M	ChangeLog
+M	src/Makefile.in
+R100	src/ccze-apm.c	src/mod_apm.c
+R100	src/ccze-exim.c	src/mod_exim.c
+R100	src/ccze-fetchmail.c	src/mod_fetchmail.c
+R100	src/ccze-httpd.c	src/mod_httpd.c
+R100	src/ccze-procmail.c	src/mod_procmail.c
+R100	src/ccze-squid.c	src/mod_squid.c
+R100	src/ccze-sulog.c	src/mod_sulog.c
+R100	src/ccze-super.c	src/mod_super.c
+R100	src/ccze-syslog.c	src/mod_syslog.c
+R100	src/ccze-ulogd.c	src/mod_ulogd.c
+R100	src/ccze-vsftpd.c	src/mod_vsftpd.c
+
+commit 078de478b5bc3de933ef28f8085fe1a807ca2341
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 23 17:43:46 2003 +0000
+
+    Internal cleanup, part one
+    
+    All the public structures and functions are in ccze.h now, private
+    ones in ccze-private.h. All source files updated.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-135
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze-apm.c
+M	src/ccze-color.c
+D	src/ccze-color.h
+M	src/ccze-compat.c
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze-exim.c
+M	src/ccze-fetchmail.c
+M	src/ccze-httpd.c
+M	src/ccze-plugin.c
+R058	src/ccze-plugin.h	src/ccze-private.h
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-sulog.c
+M	src/ccze-super.c
+M	src/ccze-syslog.c
+M	src/ccze-ulogd.c
+M	src/ccze-vsftpd.c
+M	src/ccze-wordcolor.c
+D	src/ccze-wordcolor.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit 05e2ac90419dcb3b0200b4cb05460c94e993901a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 18:13:09 2003 +0000
+
+    The `Song of the Dispossessed' release.
+    
+      You blocked up my ears
+      You plucked out my eyes
+      You cut out my tongue
+      You fed me with lies
+    
+      Oh Lord...
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-134
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit cf41dcac259c7ee42118a84a0332d29b731fb4a9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 14:42:26 2003 +0000
+
+    Fixed a segmentation fault
+    
+    * src/ccze.c (main): In the main loop if subject did not had a trailing
+      newline, do not try to replace it with a \0.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-133
+
+M	ChangeLog
+M	src/ccze.c
+
+commit b52dfa3d54b7637b197d56e19d50f0d850d73b39
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 14:39:11 2003 +0000
+
+    FreeBSD compatibility
+    
+    * src/ccze-compat.h: #include <sys/types.h>.
+    * src/ccze-plugin.c: Likewise.
+    * src/ccze-syslog.c: #include "ccze-compat.h"
+    * src/ccze-ulogd.c: Likewise.
+    * src/ccze-compat.c (getline): Fixed, so it does not segfault anymore.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-132
+
+M	ChangeLog
+M	src/ccze-compat.c
+M	src/ccze-compat.h
+M	src/ccze-plugin.c
+M	src/ccze-syslog.c
+M	src/ccze-ulogd.c
+
+commit 67d5b40b0c4e5446e4d19bde84807cdfdcf1256d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 13:27:22 2003 +0000
+
+    CC check reworded
+    
+    * configure.ac: Reworded the C compiler check, look for `cc' first,
+      instead of `gcc'.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-131
+
+M	ChangeLog
+M	configure.ac
+
+commit 3895170dac38b21f6a937942c793361cf73047fb
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 02:31:25 2003 +0000
+
+    Support changing colors on the command-line
+    
+    * src/ccze-color.h (ccze_color_parse): New prototype.
+    * src/ccze-color.c (ccze_color_parse): New function, broken out of
+      ccze_color_load's main loop.
+      (ccze_color_load): Use it.
+    * src/ccze.c (ccze_config): New members: color_argv, color_argv_alloc
+      and color_argv_len.
+      (options): Added --color.
+      (empty_subopts): New global variable.
+      (parse_opt): Handle --color.
+      (main): Cycle through ccze_config.color_argv after loading the
+      configuration files, passing each element to ccze_color_parse().
+    * TODO: Removed relevant entry.
+    * THANKS: Added Matyas Koszik.
+    * doc/ccze.1.in (OPTIONS): Documented the new --color option.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-130
+
+M	ChangeLog
+M	THANKS
+M	TODO
+M	doc/ccze.1.in
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze.c
+
+commit 2a3e42835e1645e3bda91ae429b788b27e3175e9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 01:46:21 2003 +0000
+
+    TODO Updates
+    
+    * TODO: Added a new entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-129
+
+M	ChangeLog
+M	TODO
+
+commit 0714c9736a82e856ddbcc67dbca99badb780f88c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 01:41:03 2003 +0000
+
+    Added ICC support to the build system
+    
+    * Rules.mk.in (INCLUDES): Moved to src/Makefile.in.
+      (DEFINES): Likewise.
+      (WFLAGS): Likewise.
+      (WFLAGS_3X): Likewise.
+      (ALL_CFLAGS): Likewise.
+      (LIBS): Likewise.
+    * src/Makefile.in (WFLAGS): Made it a substvar, but moved the former
+      contents to...
+      (WFLAGS_GCC): ...here.
+      (WFLAGS_ICC): New variable.
+    * configure.ac: Enhanced the compiler version check. (Lifted from thy
+      0.4.34)
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-128
+
+M	ChangeLog
+M	Rules.mk.in
+M	configure.ac
+M	src/Makefile.in
+
+commit 67a6851c90cb626319810c93ddb9cf7c1255fbaa
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 01:29:54 2003 +0000
+
+    Minor fixes & cleanups
+    
+    * src/ccze.h (ccze_addstr): Takes a ccze_color_t, not an int.
+      (ccze_http_action): Returns ccze_color_t, not an int.
+    * src/ccze.c (ccze_config): Made this static.
+      [!HAVE_ARGP_PARSE] (argp_program_name): Only define in this case.
+      (ccze_http_action): Changed to match the fixed prototype.
+      (ccze_addstr): Likewise.
+    * src/ccze-color.h (ccze_color_to_css): Take a ccze_color_t, not an
+      int.
+    * src/ccze-color.c (ccze_color_to_css): Changed to match the fixed
+      prototype. Also fixed the asprintf() call, so ICC won't emit a
+      warning anymore.
+      (ccze_color_table): Increased its size.
+      (ccze_color_to_name_css): Take an int and a ccze_color_t, not two
+    * src/ccze-wordcolor.c (ccze_wordcolor_process_one): Changed the type
+      of `col' from int to ccze_color_t.
+    * src/ccze-apm.c (ccze_apm_setup): Unescape `%'.
+    * src/ccze-httpd.c (_ccze_httpd_error): Return ccze_color_t.
+      (ccze_httpd_error_log_process): Changed the type of `lcol' from int
+      to ccze_color_t.
+    * src/ccze-procmail.c (ccze_procmail_process): Changed the type of
+      `col' to ccze_color_t.
+    * src/ccze-squid.c (_ccze_proxy_action): Return ccze_color_t.
+      (_ccze_proxy_hierarch): Likewise.
+      (_ccze_proxy_tag): Likewise.
+    * src/ccze-dump.c: Fixed all the various ICC warnings.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-127
+
+M	ChangeLog
+M	src/ccze-apm.c
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-dump.c
+M	src/ccze-httpd.c
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit cfa3b01c1ad1ca7a92093d324bd9f7151e839e15
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 00:28:56 2003 +0000
+
+    Support for changing the HTML body background
+    
+    * src/ccze-color.h (ccze_cssbody_color): New prototype.
+    * src/ccze-color.c (ccze_cssbody): New global variable.
+      (ccze_color_load): Support "cssbody".
+      (ccze_cssbody_color): New function.
+    * src/ccze.c (main): Use ccze_cssbody_color().
+    * src/ccze-cssdump.c (main): Dump cssbody too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-126
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-dump.c
+M	src/ccze.c
+
+commit f61940adc6de9a6f912f72bd72bd6ed6cc9e9891
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 19 00:17:29 2003 +0000
+
+    strdup()ing command-line options
+    
+    * src/ccze.c (parse_opt): strdup() the command-line arguments.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-125
+
+M	ChangeLog
+M	src/ccze.c
+
+commit df6eab0961131c0a13130e5499f19894f409ebbf
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 16 21:58:59 2003 +0000
+
+    Portability, #2
+    
+    * configure.ac (AC_CHECK_TYPE): Check for error_t, and fall back to
+      `int'.
+      (AC_CHECK_HEADERS): Added getopt.h.
+    * src/ccze-compat.c [HAVE_GETOPT_H]: #include getopt.h.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-124
+
+M	ChangeLog
+M	configure.ac
+M	src/ccze-compat.c
+
+commit bd17ac7e3cbb65b10944040820301c187064a53c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 20:09:40 2003 +0000
+
+    Portability
+    
+    * src/ccze-compat.h: New file.
+    * src/ccze-compat.c: Likewise.
+    * configure.ac: A set of new checks.
+    * src/ccze-color.c: #include "ccze-compat.h"
+    * src/ccze-cssdump.c: Likewise.
+    * src/ccze-dump.c: Likewise.
+    * src/ccze.c: Likewise.
+    * src/Makefile.in: Adjust accordingly.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-123
+
+M	ChangeLog
+M	configure.ac
+M	src/Makefile.in
+M	src/ccze-color.c
+A	src/ccze-compat.c
+A	src/ccze-compat.h
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+M	src/ccze.c
+
+commit e6493aeeb10a5cb6009918f01d12662e2b5fb6ce
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 16:14:02 2003 +0000
+
+    The `Wild in The Woods' release.
+    
+      Wild in The Woods of Love
+      We harm those whom we adore
+      Contrary to other intentions
+      We suffocate them in an alarming embrace
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-122
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit eb405697657ff5ca07b88421842ad01b0fcbc68b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 16:11:30 2003 +0000
+
+    Fix an unitialised variable warning.
+    
+    * src/ccze-color.c (ccze_color_load): Initialise ncolor and nkeyword to
+      zero.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-121
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit cd381b4e9cc7325d624f71b692c2ae48bb10c2bd
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 15:33:04 2003 +0000
+
+    Install ccze-cssdump
+    
+    * src/Makefile.in (install): Install ccze-cssdump.
+      (uninstall): Unintall it.
+    * doc/ccze-cssdump.1.in: New file.
+    * doc/Makefile.in (MANS): Added ccze-cssdump.1.
+      (EXTRA_DIST): Added ccze-cssdump.1.in.
+      (install): Install ccze-cssdump.1.
+      (uninstall): Uninstall it.
+    * ccze.spec.in: Handle the above changes.
+    * debian/rules: Likewise.
+    
+    While there, also corrected a few typos and errors in the other manual
+    pages.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-120
+
+M	ChangeLog
+M	ccze.spec.in
+M	debian/rules
+M	doc/Makefile.in
+A	doc/ccze-cssdump.1.in
+M	doc/ccze-plugin.7.in
+M	src/Makefile.in
+
+commit 56d974cbb8e304fc0d666330345475456605cc83
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 14:43:26 2003 +0000
+
+    TODO cleanup
+    
+    * TODO: Removed HTML output entries, all done.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-119
+
+M	ChangeLog
+M	TODO
+
+commit f0da86f987eb5db8927c4e4b85e6b2002ad8ac1f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 14:29:58 2003 +0000
+
+    Customisable CSS codes
+    
+    * src/ccze-color.c (ccze_csscolor_normal_map): New array.
+      (ccze_csscolor_bold_map): Likewise.
+      (ccze_color_to_name_css): Use these new maps.
+      (ccze_color_load): Added ability to put "css" tags into different
+      maps.
+    * src/ccze-dump.c (main): Added code to dump the css maps too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-118
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-dump.c
+
+commit e19411ddfc2ed4a0b915eed225a161c88c97f6e2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 13:36:27 2003 +0000
+
+    Yet more cleanup
+    
+    * src/ccze-color.c: Use a cleaner typedef-style.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-117
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit 8823eff8f6998707287575648cd6acc3177b80c1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 13:01:23 2003 +0000
+
+    Code cleanup
+    
+    * src/ccze.h (CCZE_ADDSTR): Removed compatibility macro.
+      (CCZE_NEWLINE): Likewise.
+    
+    Updated all sources to use ccze_addstr() and ccze_newline().
+    
+    * Rules.mk.in (.c.o): Moved to src/Makefile.in.
+      (%.so): Likewise.
+      (.SUFFIXES): Added .so.
+    * src/Makefile.in (%.o): Moved here from Rules.mk.in.
+      (%.so): Likewise.
+      (ulogd.so): Removed.
+      (ccze-ulogd.o): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-116
+
+M	ChangeLog
+M	Rules.mk.in
+M	src/Makefile.in
+M	src/ccze-apm.c
+M	src/ccze-exim.c
+M	src/ccze-fetchmail.c
+M	src/ccze-httpd.c
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-sulog.c
+M	src/ccze-super.c
+M	src/ccze-syslog.c
+M	src/ccze-ulogd.c
+M	src/ccze-vsftpd.c
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit adb1a47e142bbb608aed503d343234541873d685
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 12:31:35 2003 +0000
+
+    Documentation updates
+    
+    * doc/ccze.1.in: Documented -o cssfile.
+    * doc/ccze-plugin.7.in: Use ccze_addstr().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-115
+
+M	ChangeLog
+M	doc/ccze-plugin.7.in
+M	doc/ccze.1.in
+
+commit 92c5fc40198dcea8eccf4d24a0b09a8fc4c4bbb3
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Jan 13 12:23:41 2003 +0000
+
+    Added War_New to THANKS
+    
+    * THANKS: Added War_New.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-114
+
+M	ChangeLog
+M	THANKS
+
+commit 9e1c7918f1ab8410c0e013915df3a8fa8d7a3843
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 12 19:29:48 2003 +0000
+
+    Support CSS in an external file
+    
+    * src/ccze.c (ccze_config): Added a `cssfile' member.
+      (parse_opt): Support -o cssfile=.
+      (main): If ccze_config.cssfile is NULL, do as usual, if not, include a
+      <link> reference in the HTML header.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-113
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 4eb0e37ca198cffba9813aec5c9a546be2bafea0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 12 17:45:50 2003 +0000
+
+    Command-line args support for ccze-dump and -cssdump
+    
+    * src/ccze-dump.c: Added command-line argument support.
+    * src/ccze-cssdump.c: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-112
+
+M	ChangeLog
+M	src/ccze-cssdump.c
+M	src/ccze-dump.c
+
+commit 464e58c95ccb6ae26d9c762a8c3bbd97353db9c8
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 12 17:27:57 2003 +0000
+
+    Working in-line CSS in HTML output
+    
+    * src/ccze-color.c (ccze_color_to_name_css): Moved here from
+      src/ccze.c.
+      (ccze_color_to_css): Use ccze_color_to_name_css(), and a `.ccze_'
+      prefix for css classes.
+    * src/ccze.c (ccze_color_to_name_html): Moved to src/ccze-color.c.
+      (ccze_addstr): HTML output part rewritten.
+      (ccze_color_to_html): Unused function, removed.
+      (main): Move the CSS output stuff after loading the configuration.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-111
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze.c
+
+commit 1d1d1097e93b1b9213cb1f4e250ec6b31582e2cc
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 12 17:02:41 2003 +0000
+
+    Preparing CSS-in-HTML
+    
+    * src/ccze-color.h (ccze_color_to_css): New prototype.
+      (ccze_colors_to_css): Likewise.
+    * src/ccze-color.c (ccze_color_to_css): Moved here from
+      src/ccze-cssdump.c::ccze_dump_color_to_css().
+      (ccze_colors_to_css): New function.
+    * src/ccze-cssdump.c: Use them.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-110
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-cssdump.c
+
+commit 554aba0addd70ae4a343aa90ad97680ff015580c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Jan 12 16:44:48 2003 +0000
+
+    ccze-cssdump
+    
+    * src/ccze-color.h (ccze_color_lookup_name): New prototype.
+    * src/ccze-color.c (ccze_color_lookup_name): New function, moved here
+      from src/ccze-dump.c::ccze_dump_lookup_name().
+    * src/ccze-dump.c (ccze_dump_lookup_name): Moved to src/ccze-color.c.
+      (main): Use the new name.
+    * src/ccze-cssdump.c: New file.
+    * src/Makefile.in (SOURCES): Added ccze-cssdump.c.
+      (CLEANFILES): Added ccze-cssdump.
+      (all): Likewise.
+      (ccze-dump, ccze-cssdump): Merged the two and generalised them.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-109
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze-color.c
+M	src/ccze-color.h
+A	src/ccze-cssdump.c
+M	src/ccze-dump.c
+
+commit 9113fa5f9b2fd0bf2f2db9642fc30ae971e52dc9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Jan 11 02:56:45 2003 +0000
+
+    The `Devorzhum' release.
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    * debian/copyright: Refer to .../stable/.
+    * debian/control (Standards-Version): Bumped to 3.5.8.
+    * TODO: Extended the HTML output entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-108
+
+M	ChangeLog
+M	NEWS
+M	TODO
+M	debian/changelog
+M	debian/control
+M	debian/copyright
+
+commit d6e457e8fa3534508df0790c75e63c1e490d8957
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 9 22:53:40 2003 +0000
+
+    HTML output
+    
+    * src/ccze.c (parse_opt): Handle 'h'.
+      (ccze_newline): Updated to work when ccze_config.html is true.
+      (ccze_space): Likewise.
+      (ccze_addstr): Likewise.
+      (sigint_handler): Likewise.
+      (main): Likewise.
+      (ccze_color_to_name_html): New function.
+      (ccze_color_to_html): Likewise.
+    * doc/ccze.1.in: Documented --html.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-107
+
+M	ChangeLog
+M	doc/ccze.1.in
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-dump.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit c80cc616b5babe77825553de38a1443a13137dbc
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 9 20:36:21 2003 +0000
+
+    Preparing HTML output...
+    
+    * src/ccze.h (ccze_addstr): New prototype.
+      (ccze_newline): Likewise.
+      (ccze_space): Likewise.
+      (CCZE_ADDSTR): Make it an alias of ccze_addstr.
+      (CCZE_NEWLINE): Make it an alias of ccze_newline.
+    * src/ccze.c (ccze_config): Added a `html' member, and switched to
+      using C99-style initialisers.
+      (options): Added `html' (not handled yet).
+      (ccze_newline): New function.
+      (ccze_addstr): Likewise.
+      (ccze_space): Likewise.
+      (main): Remove most of hte ccze_config initialisation code.
+    * src/ccze-color.h (ccze_color_strip_attrib): New prototype.
+      (ccze_color_to_name_simple): New prototype.
+    * src/ccze-color.c (ccze_color_strip_attrib): New function, from
+      src/ccze-dump.c.
+      (ccze_color_to_name_simple): Likewise.
+    * src/ccze-dump.c (ccze_dump_color_strip_attrib): Moved to
+      src/ccze-color.c.
+      (ccze_dump_color_to_name_simple): Likewise.
+      (ccze_dump_color_to_name): Simpified.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-106
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-dump.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit 346b5e8e09ce51c202fc0b6bb8f50788791bf237
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Jan 9 19:37:05 2003 +0000
+
+    Use make's ifneq stuff
+    
+    * src/Makefile.in (install): Use make's ifneq stuff instead of shell
+      trickery.
+      (uninstall): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-105
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 2fa628ae7ec0e02acd0a18502b8e968c206ea35b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Dec 2 20:17:43 2002 +0000
+
+    Fixed all-static installation, once again
+    
+    * src/Makefile.in (install): Give up and use shell.
+      (uninstall): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-104
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 351a1f2b177966ec28bd52dabeebb401663c500d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Dec 2 19:48:38 2002 +0000
+
+    The `For My Fallen Angel' release.
+    
+      "Loves golden arrow
+      At her should have fled,
+      And not Deaths ebon dart
+      To strike her dead."
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-103
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit ccab2a707b6972f1955c0920eaf9241bc6b20a41
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Dec 2 14:53:01 2002 +0000
+
+    Fetchmail log colorisation
+    
+    * src/ccze-fetchmail.c: New file.
+    * configure.ac (ALL_PLUGINS): Added fetchmail.
+    * doc/ccze.1.in (PLUGINS): Documented it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-102
+
+M	ChangeLog
+M	configure.ac
+M	doc/ccze.1.in
+A	src/ccze-fetchmail.c
+
+commit c7f9bdfff63c6d3fa63afd862d82a523e0cb23d6
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Nov 29 22:48:20 2002 +0000
+
+    Fixed a stupid but in src/Makefile.in
+    
+    * src/Makefile.in (install): It is `ifdef PLUGIN_SHOBJS', not `ifdef
+      ${PLUGIN_SHOBJS}'. This fixes the install problems reported by a few
+      people. Thanks to ciga for helping me track this down.
+      (uninstall): Likewise.
+    * THANKS: Added `ciga' and IRC nicks for the others.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-101
+
+M	ChangeLog
+M	THANKS
+M	src/Makefile.in
+
+commit 186d94c6165c781bc75068d3dc91309c52524487
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Nov 21 17:29:43 2002 +0000
+
+    Fixed built-in module support
+    
+    * src/ccze-plugins.c (ccze_plugin_shutdown): Do not dlclose() ->dlhandle
+      if it is NULL.
+    * src/Makefile.in (ccze-builtins.c): _info are `ccze_plugin_t', not
+      pointers to such a struct.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-100
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze-plugin.c
+
+commit 98aa68bb4bb4b99bd94b3f19870673448f21310d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Nov 21 16:55:42 2002 +0000
+
+    Fixed src/Makefile.in::uninstall
+    
+    * src/Makefile.in: It is `ifdef', not `ifeq'.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-99
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 03cec6308bf2d2c1046ba06b8fe5de61c42b5619
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Nov 20 14:56:59 2002 +0000
+
+    Fixed all-static installation
+    
+    * src/Makefile.in (install): Only install plugins if there are any.
+      (uninstall): Only uninstall plugins if there are any.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-98
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 5089771bb8d4d36d5cd3218f4819cdd2b99a4124
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Nov 20 14:39:41 2002 +0000
+
+    <pcre.h> Vs. <pcre/pcre.h>
+    
+    * configure.ac: Check whether we need pcre.h or pcre/pcre.h.
+    * src/ccze.h (PCRE_H): New define. Use it all over the place instead
+      of hardcoding <pcre.h>.
+    * ccze.spec.in (%build): The -I/usr/include/pcre flag is not needed
+      anymore.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-97
+
+M	ChangeLog
+M	ccze.spec.in
+M	configure.ac
+M	src/ccze-apm.c
+M	src/ccze-exim.c
+M	src/ccze-httpd.c
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-sulog.c
+M	src/ccze-super.c
+M	src/ccze-syslog.c
+M	src/ccze-ulogd.c
+M	src/ccze-vsftpd.c
+M	src/ccze-wordcolor.c
+M	src/ccze.h
+
+commit 521cf94dd069a57b481e0e01c65c7b1ef519cace
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Nov 20 14:21:32 2002 +0000
+
+    Fixed make dist
+    
+    * src/Makefile.in (SOURCES): Use ${ALL_PLUGINS} instead of ${PLUGINS}.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-96
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 91bd6798b441bbe6c089c54c13431a33211ddd0c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Nov 20 14:07:07 2002 +0000
+
+    Added support for built-in plugins
+    
+    * src/ccze-plugin.h (ccze_plugin_add): New prototype.
+      (ccze_plugin_load_all_builtins): Likewise.
+    * src/ccze-plugin.c (_ccze_plugin_add): Exported, and renamed to...
+      (ccze_plugin_add): ...this.
+      (ccze_plugin_shutdown): Check if plugins[i] is NULL before
+      dereferencing it.
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): Bail out early if
+      `msg' is NULL.
+    * src/ccze.c (main): Call ccze_plugin_load_all_builtins() before
+      _finalise().
+    * src/Makefile.in (ALL_PLUGINS): New substvar.
+      (S_PLUGINS): Likewise.
+      (SH_PLUGINS): New variable.
+      (PLUGIN_SHOBJS): Likewise.
+      (PLUGIN_SOBJS): Likewise.
+      (PLUGIN_OBJS): This should be the aggregate of _SHOBJS and _SOBJS.
+      (CLEANFILES): Only clean `ccze-dump', the rest is taken care of by
+      Rules.mk.in.
+      (DISTCLEANFILES): Added ccze-builtins.c.
+      (OBJECTS): Added ccze-builtins.o.
+      (all): Depend on ${PLUGIN_SHOBJS}, not on ${PLUGIN_OBJS}.
+      (install): Only install plugins if there are any, and in that case,
+      ${PLUGIN_SHOBJS} only.
+      (${PROGRAM}): Depend on ${PLUGIN_SOBJS}.
+      (ccze-builtin.c): New rule.
+      (ccze-ulogd.o): Likewise.
+    * Makefile.in: Eradicate all traces of etc/.
+    * Rules.mk.in (clean): Remove *.o, *.so and *.da automatically.
+    * configure.ac: Support --with-builtins.
+      (AC_OUTPUT): Removed etc/Makefile.
+    * ccze.spec.in: Use src/ccze-dump and --with-builtins=all.
+    * debian/rules: Likewise.
+    * TODO: Remove relevant entry.
+    * doc/ccze.1.in (PLUGINS): Remove .so suffix.
+    * etc/Makefile.in: Removed.
+    * etc/cczerc: Likewise.
+    * etc/: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-95
+
+M	ChangeLog
+M	Makefile.in
+M	Rules.mk.in
+M	TODO
+M	ccze.spec.in
+M	configure.ac
+M	debian/rules
+M	doc/ccze.1.in
+D	etc/Makefile.in
+D	etc/cczerc
+M	src/Makefile.in
+M	src/ccze-plugin.c
+M	src/ccze-plugin.h
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+
+commit 711678879e6068016241c3f1e880e08f0ab1c217
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Nov 19 22:44:20 2002 +0000
+
+    ccze-dump
+    
+    * src/ccze-dump.c: New file.
+    * src/Makefile.in (SOURCES): Added ccze-dump.c.
+      (CLEANFILES): Added ccze-dump.
+      (all): Likewise.
+      (ccze-dump): New target.
+    * src/ccze-color.c (CCZE_KEYWORD): New macro.
+      (ccze_color_keyword_map): Use it all over the place.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-94
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze-color.c
+A	src/ccze-dump.c
+
+commit 63342dc29d2d6e73057f7dd2584054e458334e8b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Nov 19 20:53:04 2002 +0000
+
+    Added color keyword comments
+    
+    * src/ccze-color.c (ccze_color_keyword_t): Added a `comment' member.
+      (ccze_color_keyword_map): Added comments for all the keywords.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-93
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit ab7e728608a8ad61043244bbd8b8f8a756d429b7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Nov 19 19:00:19 2002 +0000
+
+    Documented plugin architecture
+    
+    * doc/ccze-plugin.7.in: New file.
+    * doc/Makefile.in: Added support for building multiple manual pages.
+      (EXTRA_DIST): Added ccze-plugin.7.in.
+    * Rules.mk.in (man7dir): New variable.
+    * TODO: Removed relevant entry.
+    * debian/rules: Compress ccze-plugin.7 too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-92
+
+M	ChangeLog
+M	Rules.mk.in
+M	TODO
+M	debian/rules
+M	doc/Makefile.in
+A	doc/ccze-plugin.7.in
+
+commit 47a56c903dd974df08c8fa120d58d35d0f8cc293
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Nov 19 17:44:12 2002 +0000
+
+    The `Like Gods of the Sun' release.
+    
+      We burn like gods of the sun
+      Paradise pales compared to you
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-91
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit 3e48e901404f4c9b12eae4ece3a0a0edd5c3346b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Nov 19 17:32:25 2002 +0000
+
+    ccze.spec.in
+    
+    * ccze.spec.in: New file, based on the work of Andreas Brenk.
+    * Makefile.in: Added support for generating ccze.spec.
+      (dist): Depend on ccze.spec.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-90
+
+M	ChangeLog
+M	Makefile.in
+A	ccze.spec.in
+
+commit 9b6183cd6b87c6969e67e2c1a4f4b3ef4e7d889a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Nov 19 17:06:25 2002 +0000
+
+    AC_FUNC_REALLOC
+    
+    * configure.ac: Added AC_FUNC_REALLOC, thanks to autoscan.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-89
+
+M	ChangeLog
+M	configure.ac
+
+commit 4ec5923669e4b196298cb64f6ce2112c68db7e33
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 18 22:17:47 2002 +0000
+
+    APM log colorisation
+    
+    * src/ccze-apm.c: New file.
+    * src/Makefile.in (PLUGINS): Added apm.
+    * doc/ccze.1.in (PLUGINS): Document it.
+    * src/ccze-wordcolor.c (words_bad): Added `empty'.
+      (words_system): Added `discharging' and `resume'.
+    * src/ccze-color.h (ccze_color_t): Added CCZE_COLOR_PERCENTAGE.
+    * src/ccze-color.c: Added support code for it.
+    * src/ccze.c (main): Support word colorisation of partial plugin
+      output.
+    * THANKS: Added Janos Lorincz.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-88
+
+M	ChangeLog
+M	THANKS
+M	doc/ccze.1.in
+M	src/Makefile.in
+A	src/ccze-apm.c
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-wordcolor.c
+M	src/ccze.c
+
+commit f9db1b6cfe40651d29e9fb80a688aae9290023d9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 18 21:41:38 2002 +0000
+
+    Implemented partial coloriser plugin support
+    
+    * src/ccze-plugin.h (ccze_plugin_run): New prototype.
+    * src/ccze-plugin.c (ccze_plugin_run): New function.
+    * src/ccze.c (main): Use it, and if there are pending stuff after all
+      full plugins were run, filter the rest of the input through the
+      partial ones, and only then through wordcolor.
+    * src/ccze-ulogd.c: Converted to a partial plugin. Yay!
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-87
+
+M	ChangeLog
+M	src/ccze-plugin.c
+M	src/ccze-plugin.h
+M	src/ccze-ulogd.c
+M	src/ccze.c
+
+commit b084d0089b30b2ed304a81d7b0d13357c44383c4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 18 21:12:38 2002 +0000
+
+    Plugin support revamped once again
+    
+    * src/ccze-plugin.h (CCZE_DEFINE_PLUGIN): New macro.
+      (ccze_plugin_startup_t): It is void, not void *.
+      (ccze_plugin_shutdown_t): Likewise.
+      (ccze_plugin_type_t): New enum.
+      (ccze_plugin_t): Added a `type' member.
+    * src/ccze-plugin.c (_ccze_plugin_load): dlsym the newly introduced
+      ccze_foo_info symbol, and nothing else.
+      (ccze_plugin_shutdown): Since ccze_plugin_t is dlsym()ed now, we
+      must not free nor ->name, or the struct itself.
+    * Rules.mk.in (%.so): Depend on ccze-plugin.h too.
+    * src/Makefile.in (ulogd.so): Likewise.
+    
+    All users and modules updated accordingly.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-86
+
+M	ChangeLog
+M	Rules.mk.in
+M	src/Makefile.in
+M	src/ccze-exim.c
+M	src/ccze-httpd.c
+M	src/ccze-plugin.c
+M	src/ccze-plugin.h
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-sulog.c
+M	src/ccze-super.c
+M	src/ccze-syslog.c
+M	src/ccze-ulogd.c
+M	src/ccze-vsftpd.c
+
+commit 0b15ac52e8b98ca81c86b2e44990e8e72e219e91
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 18 18:24:29 2002 +0000
+
+    Documented the ulogd plugin
+    
+    * doc/ccze.1.in (PLUGINS): Documented the ulogd plugin.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-85
+
+M	ChangeLog
+M	doc/ccze.1.in
+
+commit 1751fc65524f01d6994ea26d6eee635674557bc2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 18 18:20:16 2002 +0000
+
+    ulogd colorisation
+    
+    * src/ccze-ulogd.c: New file.
+    * src/Makefile.in (PLUGINS): Added ulogd.
+      (ulogd.so): Special case, as it depends on ccze-wordcolor.h too.
+    * THANKS: Added DC-1.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-84
+
+M	ChangeLog
+M	THANKS
+M	src/Makefile.in
+A	src/ccze-ulogd.c
+
+commit 42b85698a9c1daf36bb9374a2710557c606ee475
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 18 18:16:01 2002 +0000
+
+    Some stuff reorganised
+    
+    * src/ccze-wordcolor.h (ccze_wordcolor_process_one): New prototype.
+    * src/ccze-wordcolor.c (ccze_wordcolor_process_one): New function.
+      (ccze_wordcolor_process): Use it.
+      (xstrdup): Moved to src/ccze.c.
+      (_my_strbrk): Likewise.
+    * src/ccze.h (xstrdup): New prototype.
+      (ccze_strbrk): Likewise.
+    * src/ccze.c (xstrdup): Moved here from src/ccze-wordcolor.c.
+      (ccze_strbrk): Likewise.
+    * src/ccze-color.h (ccze_color_t): Added _FIELD and _CHAIN.
+    * src/ccze-color.c: Added support code for them.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-83
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-wordcolor.c
+M	src/ccze-wordcolor.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit b21cbaee41414dad90fb7b9ff1765a251477393e
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Nov 4 20:01:50 2002 +0000
+
+    Link shared objects to ncurses and pcre
+    
+    * Rules.mk.in (%.so): Add ${ALL_LDFLAGS} to the command-line.
+    * THANKS: Added Ferenc Kalcso.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-82
+
+M	ChangeLog
+M	Rules.mk.in
+M	THANKS
+
+commit fe68ae7ad2a8dad8eb26ed5e79adc7de32a6a9a6
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Oct 13 12:56:24 2002 +0000
+
+    #include <curses.h>
+    
+    * src/ccze.h: #include <curses.h>.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-81
+
+M	ChangeLog
+M	src/ccze.h
+
+commit 5d98f2c17ce6b62e5457b205478d9cf1106f9ea2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 21:35:55 2002 +0000
+
+    The `Stance of Evander Sinque' release.
+    
+      He lays forgotten
+      Dead skin and broken neck
+      And no-one knew him
+      Though he was genius
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-80
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit bb82f64ff8b3074be90df045db2888b155b38be4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 21:29:57 2002 +0000
+
+    Various updates under debian/
+    
+    * debian/rules (install): We need root privileges for this target.
+    * debian/copyright: Changed my e-mail address, and replaced the
+      standard GPL header with one tuned for CCZE.
+    * debian/control (Maintainer): Changed my e-mail address.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-79
+
+M	ChangeLog
+M	debian/control
+M	debian/copyright
+M	debian/rules
+
+commit e8858080fe7d2e4ef295ce8a34fb9078ca3ad983
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 21:20:36 2002 +0000
+
+    Getting rid of strndupa()
+    
+    * src/ccze-color.c (_ccze_colorname_map_lookup): Get rid of
+      strndupa().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-78
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit a8141381e3be06d295bf52aef9bef20e3c6139c9
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 21:16:26 2002 +0000
+
+    AC_FUNC_STAT
+    
+    * configure.ac: Added AC_FUNC_STAT, noticed by autoscan.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-77
+
+M	ChangeLog
+M	configure.ac
+
+commit 90b184a66444596dd30d660d5c15f8aedf86b409
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 21:11:46 2002 +0000
+
+    TODO updates
+    
+    * TODO: Added two new entries.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-76
+
+M	ChangeLog
+M	TODO
+
+commit f9593ff3ef4c6aabafb9622d953b02d6560dc6ef
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 20:56:01 2002 +0000
+
+    Automatically generate the manual page
+    
+    * doc/ccze.1: Renamed to...
+    * doc/ccze.1.in: ...this, and replaced all configurable paths with an
+      appropriate magic word.
+    * doc/Makefile.in (DISTCLEANFILES): Added ${MAN}.
+      (EXTRA_DIST): Added ${MAN}.in.
+      (all): Depend on ${MAN}.
+      (${MAN}): New target.
+    * Rules.mk.in (DISTFILES): Removed ${MAN}.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-75
+
+M	ChangeLog
+M	Rules.mk.in
+M	doc/Makefile.in
+R092	doc/ccze.1	doc/ccze.1.in
+
+commit 32e67c55d89958583efe2d910131c918083e7754
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 20:46:14 2002 +0000
+
+    "last message..." and "-- MARK --" coloring
+    
+    * src/ccze-color.h (ccze_color_t): Added CCZE_COLOR_REPEAT.
+    * src/ccze-color.c (ccze_color_keyword_map): Added `repeat'.
+      (ccze_color_init): Initialise CCZE_COLOR_REPEAT to white.
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): Color "last message
+      ..." and "-- MARK --" messages with CCZE_COLOR_REPEAT.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-74
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze-color.h
+M	src/ccze-wordcolor.c
+
+commit 5db36ab3e6520f27aca5e7c6af51b1db6a523a91
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Oct 12 20:28:22 2002 +0000
+
+    Exit if no plugins were found
+    
+    * src/ccze.c (main): Exit if no plugins could be loaded.
+    
+    Thanks to Istvan Karaszi for the idea.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-73
+
+M	ChangeLog
+M	src/ccze.c
+
+commit e7011bd29770073e436378d1aa9665f7fc9971c7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Oct 4 10:35:42 2002 +0000
+
+    The `Base Level Erotica' release.
+    
+      What do you see
+      What do you see when eyes are closed
+      What do you feel
+      What do you feel when she's below
+      What do you want
+      What do you want her to be. A star
+      What do you see
+      What do you see when eyes flick open
+    
+    * NEWS: Updated.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-72
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+
+commit ad17803cf6eec82740b1a8b90024e039ab17d449
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Oct 4 10:17:41 2002 +0000
+
+    Exported function should not be static.
+    
+    Modules were broken since 0.1.64, where I declared all the functions in
+    them `static'. However, _setup, _shutdown and _handle should be
+    exported, therefore they must NOT be static. This is now fixed.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-71
+
+M	ChangeLog
+M	src/ccze-exim.c
+M	src/ccze-httpd.c
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-sulog.c
+M	src/ccze-super.c
+M	src/ccze-syslog.c
+M	src/ccze-vsftpd.c
+
+commit 8f45dd23b20a5a8eb179ffd2eb776d380ae79d5d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Oct 3 13:43:28 2002 +0000
+
+    The `Edenbeast' release
+    
+      All are welcome here
+      To the Eden Feast
+      Enter if you will
+      This is Edenbeast
+    
+    * debian/maint/conffiles: Removed.
+    * debian/rules: Support DEB_BUILD_OPTIONS=noopt, and generate
+      DEBIAN/conffiles.
+    * NEWS: Added release notes.
+    * debian/changelog: Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-70
+
+M	ChangeLog
+M	NEWS
+M	debian/changelog
+D	debian/maint/conffiles
+M	debian/rules
+
+commit a298d90f1695f0e4c2d177a0f99d9c27f7d86390
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Oct 1 12:25:53 2002 +0000
+
+    Removed --scroll
+    
+    * src/ccze.c (options): Removed --scroll, as it is unused.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-69
+
+M	ChangeLog
+M	src/ccze.c
+
+commit be82662adb68344d649fe667e15684067b4c5920
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Oct 1 12:23:42 2002 +0000
+
+    Documentation updates
+    
+    * README: Mention that CCZE is a drop-in replacement for colorize.
+    * doc/ccze.1: Almost completely rewritten to be up-to-date.
+    * TODO: Removed relevant entries.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-68
+
+M	ChangeLog
+M	README
+M	TODO
+M	doc/ccze.1
+
+commit 14778d391eae8cf3d3909307e4a84cae1d046a36
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Sep 29 17:30:57 2002 +0000
+
+    --remove-facility
+    
+    * src/ccze.c: Implemented --remove-facility a'la colorize.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-67
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 00f1ec241accb199da59a6af448e7880ac87e1a3
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Sep 29 17:18:21 2002 +0000
+
+    Folded a set of options into --options
+    
+    * src/ccze.c: Folded --no-* and --scroll into --options
+      [no]{scroll,wordcolor,lookups}.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-66
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 8a80e154c8ce86021a55f543ff4b7ad7d6b127cd
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 28 20:47:58 2002 +0000
+
+    -Wunused-function
+    
+    * Rules.mk.in (WFLAGS_3X): Added -Wunused and Wno-unused-function.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-65
+
+M	ChangeLog
+M	Rules.mk.in
+
+commit 6eefe781e46230bd353c5c6e0fcf50dbcf6f6f3b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 28 20:27:50 2002 +0000
+
+    A big header cleanup
+    
+    * src/ccze-exim.h: Removed.
+    * src/ccze-httpd.h: Likewise.
+    * src/ccze-procmail.h: Likewise.
+    * src/ccze-squid.h: Likewise.
+    * src/ccze-sulog.h: Likewise.
+    * src/ccze-super.h: Likewise.
+    * src/ccze-syslog.h: Likewise.
+    * src/ccze-vsftpd.h: Likewise.
+    * src/ccze-exim.c: Adjust to the removal of module headers.
+    * src/ccze-httpd.c: Likewise.
+    * src/ccze-procmail.c: Likewise.
+    * src/ccze-squid.c: Likewise.
+    * src/ccze-sulog.c: Likewise.
+    * src/ccze-super.c: Likewise.
+    * src/ccze-syslog.c: Likewise.
+    * src/ccze-vsftpd.c: Likewise.
+    * src/Makefile.in (HEADERS): Remove plugin headers.
+      (ccze-*.so): Removed.
+    * Rules.mk.in (%.so): Do not depend on ccze-%.h.
+      (.SUFFIXES): First empty it, then set it to ".c .o".
+      (WFLAGS): Remove -Wunused.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-64
+
+M	ChangeLog
+M	Rules.mk.in
+M	src/Makefile.in
+M	src/ccze-exim.c
+D	src/ccze-exim.h
+M	src/ccze-httpd.c
+D	src/ccze-httpd.h
+M	src/ccze-procmail.c
+D	src/ccze-procmail.h
+M	src/ccze-squid.c
+D	src/ccze-squid.h
+M	src/ccze-sulog.c
+D	src/ccze-sulog.h
+M	src/ccze-super.c
+D	src/ccze-super.h
+M	src/ccze-syslog.c
+D	src/ccze-syslog.h
+M	src/ccze-vsftpd.c
+D	src/ccze-vsftpd.h
+
+commit ecbcce4cc83bcd04b672ff6ec9fdbe437644c6fc
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 28 16:41:06 2002 +0000
+
+    Fixed plugin loading from ~/.ccze/
+    
+    * src/ccze-plugin.c (ccze_plugin_load_all): Pass `homeplugs' to
+      _ccze_load_set, not `home', so modules will be searched under
+      ~/.ccze, not under ~/ itself.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-63
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit dec186972624bd750e22d1a4d8ae27d6dbb131cf
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 28 16:36:17 2002 +0000
+
+    Exim mainlog colorisation module
+    
+    * src/ccze-color.c (ccze_color_keyword_map): Added `incoming',
+      `outgoing', and `uniqn'.
+      (ccze_color_init): Initialise them.
+    * src/ccze-color.h (ccze_color_t): Added CCZE_COLOR_INCOMING,
+      CCZE_COLOR_OUTGOING, and CCZE_COLOR_UNIQN.
+    * src/ccze-exim.h: New file.
+    * src/ccze-exim.c: Likewise.
+    * Makefile.in (PLUGINS): Added `exim'.
+      (ccze-exim.so): New target.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-62
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze-color.c
+M	src/ccze-color.h
+A	src/ccze-exim.c
+A	src/ccze-exim.h
+
+commit 5391cce74210c664854777abe90edc38f8f0555d
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 28 15:33:51 2002 +0000
+
+    Minor optimisation in plugin loading
+    
+    * src/ccze-plugin.c (_ccze_plugin_load): Moved most of
+      ccze_plugin_load() here.
+      (ccze_plugin_load): Made it a wrapper around _ccze_plugin_load().
+      (_ccze_plugin_load_set): Take a `base' argument, and use it to
+      construct `path' which is passed to _ccze_plugin_load() (yes,
+      changed to use _ccze_plugin_load() instead of ccze_plugin_load()).
+      (ccze_plugin_load_all): Adapted to _ccze_plugin_load_set change.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-61
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit 9dd12b224df12b93b839f9334b8230bc8a9c3464
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 28 14:41:01 2002 +0000
+
+    Plugin architecture cleanup and redesign
+    
+    * src/ccze-plugin.h (ccze_plugin_init): New prototype.
+      (ccze_plugins): Likewise.
+      (ccze_plugin_shutdown): Likewise.
+      (ccze_plugin_finalise): Likewise.
+      (ccze_plugin_load): Changed prototype.
+      (ccze_plugin_load_all): Likewise.
+    * src/ccze_plugin.c (_ccze_plugin_add): New helper function.
+      (ccze_plugin_init): New function.
+      (ccze_plugin_finalise): Likewise.
+      (ccze_plugin_shutdown): Likewise.
+      (ccze_plugins): Likewise.
+      (ccze_plugin_load): Adapted to new plugin design.
+      (ccze_plugin_load_all): Likewise.
+      (_ccze_plugin_loaded): Likewise.
+      (_ccze_plugin_load_set): Likewise.
+    * src/ccze.c (sigint_handler): Use sigint_handler().
+      (main): Adapted to the new plugin design.
+    * TODO: Plugin stuff is done.
+    
+    This new design is actually rather simple: there is one "global"
+    ccze_plugin_t ** in src/ccze_plugin.c, and that module does all the
+    hard job. This way no code is duplicated unnecessarily, less arguments
+    are passed around, and in general it is Far Better(tm).
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-60
+
+M	ChangeLog
+M	TODO
+M	src/ccze-plugin.c
+M	src/ccze-plugin.h
+M	src/ccze.c
+
+commit a6296a2bb678b36bcc7a9d4c52f8413803b8b01b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Sep 24 16:35:05 2002 +0000
+
+    TODO updates
+    
+    * TODO (Bugfixes and cleanups): New section.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-59
+
+M	ChangeLog
+M	TODO
+
+commit 6c990ae7450855ce2c1bd1e1b559a815722e413b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Sep 24 16:32:41 2002 +0000
+
+    --plugin support
+    
+    * src/ccze.c (ccze_config): Added pluginlist, pluginlist_len and
+      pluginlist_alloc members.
+      (options): Added --plugin.
+      (parse_opt): Handle --plugin.
+      (main): If no --plugin option was given, try to load all of them. If
+      there was at least one, only load the ones which were explicitly
+      specified.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-58
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 55afbcaff04c2a558b2e15a5714b0358c14b6720
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Sep 24 16:18:32 2002 +0000
+
+    CLEANFILES cleanup
+    
+    * src/Makefile.in (CLEANFILES): Clean ${OBJECTS:.o=.da} only, not the
+      whole ${SOURCES:.c=.da}.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-57
+
+M	ChangeLog
+M	src/Makefile.in
+
+commit 629666baca79796cef4a45aa1d4f25c08cdc4eb2
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 20 13:48:21 2002 +0000
+
+    Scan ~/.ccze/ for plugins too
+    
+    * src/ccze-plugin.c (_ccze_plugin_load_set): New function.
+      (ccze_plugin_load_all): Utilise _ccze_plugin_load_set() to load
+      plugins from under ~/.ccze/ and PLUGIN_LIBPATH.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-56
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit 3908f966c11e16c3bf80c08b5f8a83a21937f362
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 20 13:09:18 2002 +0000
+
+    Search for plugins under ~/.ccze/
+    
+    * src/ccze-plugin.c (ccze_plugin_load): Check if the plugin exists under
+      ~/.ccze, and only load from the global area if not.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-55
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit ce6fd28f8eae5695a224c1e5bc10ed7cae868b8b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 16:01:14 2002 +0000
+
+    Pre-tag fixes
+    
+    * src/ccze-color.c (ccze_color_load): Fixed to correctly setup colors
+      with pre-tags (bold, blink, etc).
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-54
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit 394d76d07d7d58bd720c6b73031e91ad052b62ed
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 15:40:36 2002 +0000
+
+    Updated debianisation
+    
+    * debian/maint/conffiles: New file.
+    * debian/rules (install): Install /etc/cczerc.
+      (binary-ccze): Install DEBIAN/conffiles.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-53
+
+M	ChangeLog
+A	debian/maint/conffiles
+M	debian/rules
+
+commit 1ea870606c7230126fff60398db0221e0994e122
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 15:31:16 2002 +0000
+
+    Simplified background-color parsing logic
+    
+    * src/ccze-color.c (ccze_color_load): Instead of the ugly strstr()
+      check, put the on_ variants into the ccze_colorname_map table too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-52
+
+M	ChangeLog
+M	src/ccze-color.c
+
+commit f19aac03e2b29026971e6c2dccee2ded7d9b1083
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 15:25:35 2002 +0000
+
+    Background color support
+    
+    * src/ccze.c (main): Set up all the colors, with backgrounds.
+    * src/ccze-color.c (ccze_colorname_map): Use numbers instead of
+      COLOR_PAIR()s.
+      (ccze_color_load): Catch "bold", "underline", "reverse" and "blink"
+      pre-tags. Parse further for the background color (and accept both
+      <color> and on_<color).
+      (ccze_color_init): Initialise CCZE_COLOR_SWAPNUM to blue on_white.
+    * TODO: Removed relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-51
+
+M	ChangeLog
+M	TODO
+M	src/ccze-color.c
+M	src/ccze.c
+
+commit 5546f3027bd6f614e0dd5918d72c70e96f0b03a1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 14:41:38 2002 +0000
+
+    Introducing: etc/cczerc
+    
+    * etc/cczerc: New file.
+    * etc/Makefile.in: New file.
+    * configure.ac: Generate etc/Makefile.
+    * Makefile.in: Recurse into etc/ too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-50
+
+M	ChangeLog
+M	Makefile.in
+M	configure.ac
+A	etc/Makefile.in
+A	etc/cczerc
+
+commit d36327929c9d589c9f0ffba7575c8c87a8bf4e4a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 14:30:20 2002 +0000
+
+    Support --rcfile
+    
+    * src/ccze-color.c (ccze_color_load): Stat the file before opening,
+      and bail out if it is not a regular file.
+    * src/ccze.c (ccze_config): Added an `rcfile' member.
+      (options): Added `--rcfile'.
+      (parse_opts): Recognise it.
+      (main): Initialise ccze_config.rcfile to NULL, and only load any
+      other files if it is still NULL after parsing.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-49
+
+M	ChangeLog
+M	src/ccze-color.c
+M	src/ccze.c
+
+commit cf07ed71d2f4b73c0466ed593d4cd2b8f1d296e4
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 14:05:58 2002 +0000
+
+    Minor memory-leak fix
+    
+    * src/ccze-plugin.c (ccze_plugin_load_all): In the while() loop, free()
+      namelist[m], and after the loop, free() namelist itself too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-48
+
+M	ChangeLog
+M	src/ccze-plugin.c
+
+commit a9e9ef284975bd48d1ebd4dbfcacf1e8e7a1b5c7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 14:00:06 2002 +0000
+
+    Removed a debugging statement
+    
+    * src/ccze.c (main): The endwin() after ccze_color_init() accidentally
+      creeped in from my development tree. Removed.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-47
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 58de3a45fc0836a65d24597c54f156ebbcb607e0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 13:57:34 2002 +0000
+
+    Load $SYSCONFDIR/cczerc and ~/.cczerc too
+    
+    * src/ccze.c (main): Try loading $SYCONFDIR/cczerc and ~/.cczerc too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-46
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 43a629c10c35dd0c5709dd840736b508e5cff742
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 13:53:31 2002 +0000
+
+    Check for fcntl.h
+    
+    * configure.ac: AC_CHECK_HEADERS([fcntl.h]).
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-45
+
+M	ChangeLog
+M	configure.ac
+
+commit 0b42974a6bb240919483759f54363f1b890a2f4e
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 13:26:12 2002 +0000
+
+    Configuration support, take #1
+    
+    * src/ccze-color.h: New file.
+    * src/ccze-color.c: Likewise.
+    * src/ccze.h: Removed all the color-related defines.
+    * src/ccze.c (main): Initialise color support, and load the
+      configuration files.
+    * src/Makefile.in (SOURCES): Added ccze-color.c.
+      (HEADERS): Added ccze-color.h.
+      (OBJECTS): Added ccze-color.o.
+      (ccze.o): Depend on ccze-color.h too.
+      (ccze-color.o): New target.
+    * TODO: Updated relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-44
+
+M	ChangeLog
+M	TODO
+M	src/Makefile.in
+A	src/ccze-color.c
+A	src/ccze-color.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit 68d0935c78b13e0751c6b379a596e1f703039b26
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Wed Sep 18 13:15:22 2002 +0000
+
+    Syslog modularised
+    
+    * src/ccze.c (siginthandler): Do not shutdown the syslog module
+      explictly.
+      (main): Got rid of the syslog-module special case.
+    * src/Makefile.in (SOURCES): Removed ccze-syslog.c.
+      (HEADERS): Removed ccze-syslog.h
+      (OBJECTS): Removed ccze-syslog.o
+      (PLUGINS): Added syslog.
+      (ccze.o): Do not depend on ccze-syslog.h.
+      (ccze-syslog.o): Renamed to...
+      (ccze-syslog.so): ...this.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-43
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze.c
+
+commit 9cc8bc88867b7dfbcfcc4d5f277ea49e8941b6a1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Tue Sep 17 14:44:01 2002 +0000
+
+    Workaround for a bug in pcre
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_setup): Remove the '$' from
+      reg_email, and introduce reg_email2, containing the final part with
+      the $.
+      (ccze_wordcolor_process): Use reg_email2 together with
+      reg_email. This does not match exactly the same set as reg_email was
+      intended to match, but it is close enough.
+      (ccze_wordcolor_shutdown): free() reg_email2.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-42
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 47d7c23a47cc620c7cb52726430fbd4b9b8a9db1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Sep 16 19:54:22 2002 +0000
+
+    Introducing: ccze.1
+    
+    * doc/Makefile.in: New file.
+    * doc/ccze.1: New file.
+    * configure.ac: Create doc/Makefile too.
+    * Makefile.in: Recurse into doc/
+    * TODO: Updated Documentation entry.
+    * debian/rules: Compress the manual page.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-41
+
+M	ChangeLog
+M	Makefile.in
+M	TODO
+M	configure.ac
+M	debian/rules
+A	doc/Makefile.in
+A	doc/ccze.1
+
+commit 14493b8d7b9c253144b1177b1f2c09a2b7566bbe
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Sep 16 17:40:27 2002 +0000
+
+    Debianisation
+    
+    Debianised ccze. It was a fast job, so there might be rough edges, but
+    this is still better than nothing.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-40
+
+M	ChangeLog
+A	debian/changelog
+A	debian/control
+A	debian/copyright
+A	debian/rules
+
+commit c5af396ec6950f7236c22e88657b44ba5f9c63aa
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Sep 16 16:56:43 2002 +0000
+
+    Modularisation
+    
+    * src/ccze-plugin.h: New file.
+    * src/ccze-plugin.c: Likewise.
+    * src/ccze.h: Removed the CCZE_MATCH_* enum. All users updated.
+    * src/ccze.c: Adapted to the new plugin-handling scheme.
+    * src/ccze-super.c: New file (forgot to add earlier).
+    * src/ccze-super.h: Likewise.
+    * src/Makefile.in (SOURCES): Reorganised.
+      (HEADERS): Likewise.
+      (PLUGINS): New variable.
+      (PLUGIN_OBJS): Likewise.
+      (CLEANFILES): Added ${PLUGIN_OBJS}.
+      (OBJECTS): Moved here from Rules.mk.in.
+      (install): Install plugins too.
+      (uninstall): Uninstall plugins too.
+      (all): Depend on ${PLUGIN_OBJS}.
+      (${PROGRAM}): Link with -rdynamic.
+    * Rules.mk.in (libdir): New variable.
+      (pkglibdir): Likewise.
+      (DEFINES): Pass on -DPKGLIBDIR.
+      (OBJECTS): Moved to src/Makefile.in.
+      (%.so): New target.
+    * configure.ac: Added AC_HEADER_DIRENT and -ldl checks.
+    * TODO: Removed relevant entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-39
+
+M	ChangeLog
+M	Rules.mk.in
+M	TODO
+M	configure.ac
+M	src/Makefile.in
+M	src/ccze-httpd.c
+A	src/ccze-plugin.c
+A	src/ccze-plugin.h
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze-sulog.c
+A	src/ccze-super.c
+A	src/ccze-super.h
+M	src/ccze-syslog.c
+M	src/ccze-vsftpd.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit c57c490a809225939f5bf1f37ed43cc162b84da1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Sep 16 10:09:59 2002 +0000
+
+    TODO updates
+    
+    * TODO: Added `Modularisation' entry.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-38
+
+M	ChangeLog
+M	TODO
+
+commit 5ec95c7d55569d647c83c22a248d2f709fd4e96b
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Sep 16 10:03:51 2002 +0000
+
+    Calling conventions revamped
+    
+    Abstracted away all the various regexp-matching routines into opaque
+    modules, all providing the same interface. This makes it possible to
+    write a colouriser module without pcre, and it also allows us to
+    implement run-time loadable modules at some point in the future.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-37
+
+M	ChangeLog
+M	src/ccze-httpd.c
+M	src/ccze-httpd.h
+M	src/ccze-procmail.c
+M	src/ccze-procmail.h
+M	src/ccze-squid.c
+M	src/ccze-squid.h
+M	src/ccze-sulog.c
+M	src/ccze-sulog.h
+M	src/ccze-syslog.c
+M	src/ccze-syslog.h
+M	src/ccze-vsftpd.c
+M	src/ccze-vsftpd.h
+M	src/ccze-wordcolor.h
+M	src/ccze.c
+
+commit c3646983a53118081ce1e9db1f3e49c8876016af
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Mon Sep 16 08:57:46 2002 +0000
+
+    Signal colouring fix
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_setup): Lowercased the signal
+      names in `reg_sig', since we try to apply the regexp to a lowercase
+      string. Also removed the capital letters from `reg_size', for the
+      same reason.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-36
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit c9bf781c2703737f655815e1ac5e464c92443377
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sun Sep 15 16:23:48 2002 +0000
+
+    HTTPd access.log colorisation enhancements
+    
+    * src/ccze-httpd.c (ccze_httpd_access_log_process): Extract the
+      optional vhost, and put `other' on the output queue as-is.
+      (ccze_httpd_setup): The access.log regexp was tuned up a bit, to
+      support vhost and timezone elements.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-35
+
+M	ChangeLog
+M	src/ccze-httpd.c
+
+commit a6ee368ee894385a65a7fed111f12292e6ab82ca
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 14 11:37:36 2002 +0000
+
+    Fixed procmail colorisation
+    
+    * src/ccze-procmail.c (ccze_procmail_process): Do not CCZE_ADDSTR
+      `extra' in the if branch. Set `col' instead, and use that to add extra
+      to the output queue.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-34
+
+M	ChangeLog
+M	src/ccze-procmail.c
+
+commit 8f95692d9e61b8f59c9e230f8ff02d9ff72bdb64
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 14 11:30:59 2002 +0000
+
+    Fixed two double free()s
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): Do not try to free word
+      or lword twice.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-33
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 79e0ac5f2e94ff1e61ceea61cbeb9ccdedd91351
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 14 11:04:47 2002 +0000
+
+    Minor memory-leak fixes
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): free() some more
+      variables.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-32
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 0ce2f55f4091ec21ed0c40d425f33c06aa79a1d5
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 14 10:48:24 2002 +0000
+
+    An strtok() replacement
+    
+    * src/ccze-wordcolor.c (_my_strbrk): New function. Works almost like
+      strtok(), but does not eat multiple delimiters.
+      (ccze_wordcolor_process): Use it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-31
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 6f210ad2ca43733f0e3adece16f066fa043374b6
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Sat Sep 14 10:07:15 2002 +0000
+
+    Better word colouring
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): Compare the
+      lower-cased word with all those regexps, and in case of
+      good/badwords, only colour the word if the badword matches the
+      beginning of the word.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-30
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit a6d978c565f4f0aba3c80a4cae9b224c16a928ab
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 16:37:43 2002 +0000
+
+    Fixed a segmentation fault
+    
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): If the message does
+      not contain any spaces, or it is empty, put it onto the output queue
+      as-is.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-29
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit a7c8b04768812042988a0974cff4fea54ba7ff46
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 15:51:27 2002 +0000
+
+    Typo fix
+    
+    * Rules.mk.in (maintainer-clean): it is ${MAINTAINERCLEANFILES}, with a
+      capital S.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-28
+
+M	ChangeLog
+M	Rules.mk.in
+
+commit 98669f2c00d6a424a646718f93e66691ee890636
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 14:48:38 2002 +0000
+
+    Include patchlevel in the version string
+    
+    * src/ccze.c (argp_program_version): Include the PATCHLEVEL too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-27
+
+M	ChangeLog
+M	src/ccze.c
+
+commit ed350d20635b4e311098015ccf2ca0e654e6f250
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 14:44:55 2002 +0000
+
+    --no-service-lookup and --no-word-color
+    
+    * src/ccze.c (ccze_config): Added `wcol' and `slookup' members.
+      (options): Added --no-service-lookup and --no-word-color.
+      (parse_opt): Recognise them.
+      (main): Initialise them to on, and pass them to
+      ccze_wordcolor_process.
+    * src/ccze-wordcolor.h (ccze_wordcolor_process): Take two new
+      arguments.
+    * src/ccze-wordcolor.c (ccze_wordcolor_process): If `wcol' is
+      disabled, print the message in the default color. If slookup is
+      disabled, do not try costy lookups.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-26
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+M	src/ccze-wordcolor.h
+M	src/ccze.c
+
+commit 992460b7166054a08d0047ac5541904288565c79
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 14:23:36 2002 +0000
+
+    Minor regexp tweaks
+    
+    * src/ccze-wordcolor.c (words_error): Added `alarm'.
+      (ccze_wordcolor_setup): Do not place any requirement on the length
+      of reg_size, so we can catch `0.21Kbyte/sec' too.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-25
+
+M	ChangeLog
+M	src/ccze-wordcolor.c
+
+commit 693ba29454931c9b66a3be5ef062f0bd80741f40
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 13:47:56 2002 +0000
+
+    configure.ac updates
+    
+    * configure.ac: AC_FUNC_STRFTIME and AC_CHECK_HEADERS([netdb.h]) were added.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-24
+
+M	ChangeLog
+M	configure.ac
+
+commit b30ab10ecd43d5dc5b9812eecb9e27accd6a14b5
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 13:41:40 2002 +0000
+
+    UNIX timestamp conversion support
+    
+    * src/ccze.h (ccze_print_date): New prototype.
+    * src/ccze.c (ccze_print_date): New function.
+      (ccze_config): Added a convdate member.
+      (options): Handle --convert-date.
+      (parse_opt): Recognise it.
+      (main): Initialise ->convdate to off.
+    * src/ccze-squid.c (ccze_squid_access_log_process): Use
+      ccze_print_date.
+      (ccze_squid_store_log_process): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-23
+
+M	ChangeLog
+M	src/ccze-squid.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit 372163956c5d28fb86f6054f059dc3b5806edc91
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 13:23:52 2002 +0000
+
+    Word-colorising
+    
+    * src/ccze-wordcolor.h: New file.
+    * src/ccze-wordcolor.c: New file.
+    * src/ccze.h (CCZE_COLOR_MAC): New colour.
+      (CCZE_COLOR_VERSION): Likewise.
+      (CCZE_COLOR_ADDRESS): Likewise.
+      (CCZE_COLOR_NUMBERS): Likewise.
+      (CCZE_COLOR_SIGNAL): Likewise.
+      (CCZE_COLOR_SERVICE): Likewise.
+      (CCZE_COLOR_PROT): Likewise.
+      (CCZE_COLOR_BADWORD): Likewise.
+      (CCZE_COLOR_GOODWORD): Likewise.
+      (CCZE_COLOR_SYSTEMWORD): Likewise.
+    * src/ccze.c (main): Support word colorising.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-22
+
+M	ChangeLog
+M	src/Makefile.in
+A	src/ccze-wordcolor.c
+A	src/ccze-wordcolor.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit d20135d7726c866a7edf327a02259590b722dbbf
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 11:34:33 2002 +0000
+
+    No Texinfo docs
+    
+    There won't be any texinfo docs for CCZE, so support code was removed
+    from the build system.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-21
+
+M	ChangeLog
+M	Makefile.in
+M	Rules.mk.in
+M	configure.ac
+
+commit 01eb5fb4845a88f0c6c3faa4f4eb17aef9b8bda7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 11:09:03 2002 +0000
+
+    Remove trailing \n from input
+    
+    * src/ccze.c (main): Remove the trailing \n from the input, so our
+      regexps which use $ will work again.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-20
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 27c18f60b1dbfe01ce2ac2a836e2bd769d18a81f
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 10:21:38 2002 +0000
+
+    Configure check for signal return type
+    
+    * configure.ac: AC_TYPE_SIGNAL.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-19
+
+M	ChangeLog
+M	configure.ac
+
+commit 4d22fff6f00d6c2cad1395cfd903829183e21401
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 10:04:02 2002 +0000
+
+    Squid access.log colorisation fix
+    
+    * src/ccze-squid.c (ccze_squid_access_log_process): After the
+      hierarchy, print fhost, not host.
+      (ccze_squid_setup): Made the access.log regexp more robust.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-18
+
+M	ChangeLog
+M	src/ccze-squid.c
+
+commit eead4cb3e38cd3e715270a0b982fef3c9cae3f63
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 09:54:16 2002 +0000
+
+    fgets() -> getline()
+    
+    * src/ccze.c (main): Use getline() instead of fgets().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-17
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 153a0c3c3a2925e5ac863d09d95b9ec23a3d52b7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 09:49:22 2002 +0000
+
+    super.log colorisation support
+    
+    * src/ccze-super.h: New file.
+    * src/ccze-super.c: New file.
+    * src/ccze.h (CCZE_MATCH_SUPER): New enum member.
+    * src/ccze.c (main): Support super.log colorisation.
+    * src/Makefile.in (SOURCES): Added ccze-super.c.
+      (HEADERS): Added ccze-super.h
+      (ccze.o): Depend on ccze-super.h too.
+      (ccze-super.o): New target.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-16
+
+M	ChangeLog
+M	src/Makefile.in
+M	src/ccze.c
+M	src/ccze.h
+
+commit 28b38f65b65504f59b063af8e17daba41d2b4788
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 09:31:17 2002 +0000
+
+    Minor leak fix
+    
+    * src/ccze-sulog.c (ccze_sulog_process): free() islogin.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-15
+
+M	ChangeLog
+M	src/ccze-sulog.c
+
+commit f5e6ecc9ebee2e5b44558a895021c09fbab9121a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 09:26:58 2002 +0000
+
+    sulog colorisation
+    
+    * src/ccze-sulog.h: New file.
+    * src/ccze-sulog.c: New file.
+    * src/ccze.h (CCZE_MATCH_SULOG): New enum member.
+    * src/ccze.c (main): Support sulog colorisation.
+    * src/Makefile.in (SOURCES): Added ccze-sulog.c.
+      (HEADERS): Added ccze-sulog.h.
+      (ccze.o): Depend on ccze-sulog.h too.
+      (ccze-sulog.o): New target.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-14
+
+M	ChangeLog
+M	src/Makefile.in
+A	src/ccze-sulog.c
+A	src/ccze-sulog.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit 952ac3c9cb2e4d26efd46140e81a220675c9b6c7
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 08:47:31 2002 +0000
+
+    HTTPd error.log colorisation
+    
+    * src/ccze-httpd.h (ccze_httpd_setup): Take two new arguments.
+      (ccze_httpd_error_log_process): New prototype.
+    * src/ccze-httpd.c (_ccze_httpd_error): New function.
+      (ccze_httpd_error_log_process): New function.
+      (ccze_httpd_setup): Setup error.log regexp too.
+    * src/ccze.h (CCZE_MATCH_HTTPD_ERROR_LOG): New enum member.
+    * src/ccze.c (main): Support error.log colorisation.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-13
+
+M	ChangeLog
+M	src/ccze-httpd.c
+M	src/ccze-httpd.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit 124541d6e6a914805091830ab3411c75978c165c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 08:26:42 2002 +0000
+
+    Full support for store.log coloristation
+    
+    * src/ccze.h (CCZE_COLOR_PROXY_CREATE): New colour.
+      (CCZE_COLOR_PROXY_SWAPIN): Likewise.
+      (CCZE_COLOR_PROXY_SWAPOUT): Likewise.
+      (CCZE_COLOR_PROXY_RELEASE): Likewise.
+    * src/ccze-squid.c (_ccze_proxy_tag): New function.
+      (ccze_squid_store_log_process): Use it.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-12
+
+M	ChangeLog
+M	src/ccze-squid.c
+M	src/ccze.h
+
+commit 38d680a3888da3c1bdd43b937cf09b218f994551
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 08:17:22 2002 +0000
+
+    Memory-leak plugging
+    
+    * src/ccze-squid.c (ccze_squid_store_log_process): free() the
+      variables allocated by pcre_get_substring().
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-11
+
+M	ChangeLog
+M	src/ccze-squid.c
+
+commit be9d2a3ed739e9e21ce314e43e597962f5fd1976
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Fri Sep 13 08:14:29 2002 +0000
+
+    Squid store.log colorisation fix
+    
+    * src/ccze-squid.c (ccze_squid_setup): Changed the store.log regexp to
+      be more robust.
+      (ccze_squid_store_log_process): Adapted to the regexp change.
+    
+    Thanks to Mark Szabo for providing a store.log.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-10
+
+M	ChangeLog
+M	src/ccze-squid.c
+
+commit 79edfd03a209bf202a888739f82bd1823f78a89e
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 22:24:58 2002 +0000
+
+    Squid store.log colorisation, take #1
+    
+    * src/ccze.h (CCZE_COLOR_SWAPNUM): New colour.
+      (CCZE_MATCH_SQUID_STORE_LOG): New enum member.
+    * src/ccze-squid.h (ccze_squid_store_log_process): New prototype.
+      (ccze_squid_setup): Take two new arguments.
+    * src/ccze-squid.c (ccze_squid_store_log_process): New function.
+      (ccze_squid_setup): Setup store.log regexps too.
+    * src/ccze.c (main): Support store.log colorisation.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-9
+
+M	ChangeLog
+M	src/ccze-squid.c
+M	src/ccze-squid.h
+M	src/ccze.c
+M	src/ccze.h
+
+commit 71cbf0f38cd06bb8432508c0137871aac6ae304c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 21:20:13 2002 +0000
+
+    Signal handlers
+    
+    * src/ccze.c (sigint_handler): New function.
+      (sigwinch_handler): New function.
+      (main): Use them.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-8
+
+M	ChangeLog
+M	src/ccze.c
+
+commit d733c1b4e40c285937b220acb532cfbf1e567ee1
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 16:16:18 2002 +0000
+
+    addstr -> CCZE_ADDSTR
+    
+    * src/ccze.h (CCZE_ADDSTR): Surround the macro with {}, so it can be
+      safely used in an if-branch.
+      (CCZE_NEWLINE): New macro.
+    * src/ccze-procmail.c (ccze_procmail_process): Use them.
+    * src/ccze-squid.c (ccze_squid_access_log_process): Likewise.
+    * src/ccze.c (main): Likewise.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-7
+
+M	ChangeLog
+M	src/ccze-procmail.c
+M	src/ccze-squid.c
+M	src/ccze.c
+M	src/ccze.h
+
+commit 871cd732a491cf917ebd035c68592c38824f8b6c
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 16:09:52 2002 +0000
+
+    ccze_space() macroised
+    
+    * src/ccze.h (ccze_space): Made it a macro.
+    * src/ccze.c (ccze_space): Removed this function, as it is superceded by
+      the macro in src/ccze.h.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-6
+
+M	ChangeLog
+M	src/ccze.c
+M	src/ccze.h
+
+commit 0079afa3c7ed110e26f10fe759ae265606b43e2a
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 16:06:44 2002 +0000
+
+    Splitting sources
+    
+    Split up src/ccze.c into smaller parts, each one containing one or
+    more colorizer methods and a setup routine.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-5
+
+M	ChangeLog
+M	src/Makefile.in
+A	src/ccze-httpd.c
+A	src/ccze-httpd.h
+A	src/ccze-procmail.c
+A	src/ccze-procmail.h
+A	src/ccze-squid.c
+A	src/ccze-squid.h
+A	src/ccze-syslog.c
+A	src/ccze-syslog.h
+A	src/ccze-vsftpd.c
+A	src/ccze-vsftpd.h
+M	src/ccze.c
+A	src/ccze.h
+
+commit 0014166e64e5443089126274dc9f82f82d8ddb75
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 15:13:47 2002 +0000
+
+    There is no EXTRAVERSION
+    
+    * Rules.mk.in (DEFINES): Do not define EXTRAVERSION.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-4
+
+M	ChangeLog
+M	Rules.mk.in
+
+commit 2c0fecb4a76683d4460a47e2064635b5ea3aa955
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 15:11:57 2002 +0000
+
+    Some more configure checks
+    
+    * configure.ac: Check for -lpcre and -lncurses.
+    * Rules.mk.in (LIBS): New variable.
+    * src/Makefile.in (ALL_LDFLAGS): Use ${LIBS} instead of the hardcoded
+      -lpcre -lncurses setup.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-3
+
+M	ChangeLog
+M	Rules.mk.in
+M	configure.ac
+M	src/Makefile.in
+
+commit f5ff434ccbac40ff6d53f253b896ea0eedfebcc6
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 14:45:28 2002 +0000
+
+    THANKS
+    
+    * THANKS: New file.
+    * Makefile.in (EXTRA_DIST): Include THANKS.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-2
+
+M	ChangeLog
+M	Makefile.in
+A	THANKS
+
+commit de368e949b43f7b06827dfe08457ff507d621ef0
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 14:42:58 2002 +0000
+
+    Squid cache.log support
+    
+    * src/ccze.c (CCZE_MATCH_SQUID_CACHE_LOG): New enum-member.
+      (process_squid_cache_log): New function.
+      (main): Use them. And also free() the vsftpd stuff.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--patch-1
+
+M	ChangeLog
+M	src/ccze.c
+
+commit 717da61ab6ff1347d77ba8be13fc1fc9c8b51701
+Author: Gergely Nagy <algernon@bonehunter.rulez.org>
+Date:   Thu Sep 12 14:28:42 2002 +0000
+
+    Initial import
+    
+    This is the initial import of CCZE, a clone of `colorize' written in
+    C to be fast and light on resources.
+    
+    git-archimport-id: algernon@bonehunter.rulez.org--iluvatar-archive/ccze--0.1--base-0
+
+A	AUTHORS
+A	COPYING
+A	ChangeLog
+A	INSTALL
+A	Makefile.in
+A	NEWS
+A	README
+A	Rules.mk.in
+A	TODO
+A	config.guess
+A	config.sub
+A	configure.ac
+A	install-sh
+A	src/Makefile.in
+A	src/ccze.c
