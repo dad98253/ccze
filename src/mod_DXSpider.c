@@ -49,11 +49,9 @@ ccze_DXSpider_process_chan (const char *str, int *offsets, int match)
   char *toret;
   
   pcre_get_substring (str, offsets, match, 1, (const char **)&date);
-//  pcre_get_substring (str, offsets, match, 2, (const char **)&chan);
   pcre_get_substring (str, offsets, match, 2, (const char **)&direction);
   pcre_get_substring (str, offsets, match, 3, (const char **)&mtype);
   pcre_get_substring (str, offsets, match, 4, (const char **)&connection);	/* call */
-//  pcre_get_substring (str, offsets, match, 5, (const char **)&protocolMnumber);	/* [PC]## */
   pcre_get_substring (str, offsets, match, 5, (const char **)&message);  
 
   ccze_addstr (CCZE_COLOR_DATE, date);
@@ -88,10 +86,6 @@ ccze_DXSpider_process_chan (const char *str, int *offsets, int match)
   ccze_addstr (CCZE_COLOR_DXSCHANNAME, connection);
   ccze_space ();
     
-//  ccze_addstr (CCZE_COLOR_PID, "PC");
-//  ccze_addstr (CCZE_COLOR_PID, protocolMnumber);
-//  ccze_space ();
-
   toret = strdup (message);
 
   free (date);
@@ -112,7 +106,6 @@ ccze_DXSpider_process_chanerr (const char *str, int *offsets, int match)
   char *toret;
   
   pcre_get_substring (str, offsets, match, 1, (const char **)&date);
-//  pcre_get_substring (str, offsets, match, 2, (const char **)&chanerr);
   pcre_get_substring (str, offsets, match, 2, (const char **)&errortype);
   pcre_get_substring (str, offsets, match, 3, (const char **)&message);
   
@@ -220,7 +213,7 @@ ccze_DXSpider_setup (void)
 {
   const char *error;
   int errptr;
-//			     "\\s\\(chan\\)\\s(->|<-)\\s([IDX])\\s(\\S+)\\s(\\S+)[\\s^](.*)$", 0, &error,
+
   reg_DXSpider_chan = pcre_compile ("^(\\d{1,2}:\\d\\d:\\d\\d)"
 			     "\\s\\(chan\\)\\s(->|<-)\\s([IDX])\\s(\\S+)\\s(.*)$", 0, &error,
 			     &errptr, NULL);
@@ -230,7 +223,7 @@ ccze_DXSpider_setup (void)
 			     "\\s\\(chanerr\\)\\s(.*):\\s(.*)$", 0, &error,
 			     &errptr, NULL);
   hints_DXSpider_chanerr = pcre_study (reg_DXSpider_chanerr, 0, &error);
-  //			     "\\s\\(progress\\)\\s(.*):\\s(.*)$", 0, &error,
+  
   reg_DXSpider_progress = pcre_compile ("^(\\d{1,2}:\\d\\d:\\d\\d)"
 			     "\\s\\(progress\\)\\s(\\S+):\\s(\\S+)\\son\\s(\\S+)"
 			     "\\s@\\s(\\S+)\\sby\\s(\\S+)@(\\S+)\\s'(.*?)'\\sroute:\\s(\\S+)$", 0, &error,
