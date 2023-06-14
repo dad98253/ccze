@@ -9,7 +9,7 @@ include Rules.mk
 ## -- Private variables -- ##
 EXTRA_DIST	= Rules.mk.in configure configure.ac system.h.in \
 		COPYING install-sh config.guess config.sub \
-		AUTHORS README NEWS INSTALL THANKS ccze.plugins FAQ
+		AUTHORS README NEWS INSTALL THANKS ccze.plugins FAQ aclocal.m4
 
 ## -- Generic rules -- ##
 all: all-recursive
@@ -68,3 +68,55 @@ check: all
 	${MAKE} -C testsuite check
 
 .PHONY: all-recursive
+
+
+
+
+.PRECIOUS: Makefile
+
+# Generate ChangeLog
+#
+# Optional:
+#  - CHANGELOG_START: git commit ID or tag name to output changelogs from
+#    (exclusive). (Default: include all commits)
+#  - CHANGELOG_GIT_FLAGS: General flags to pass to git-log when generating the
+#    ChangeLog. (Default: various)
+#  - CHANGELOG_GIT_DIR: .git directory to use. (Default: $(top_srcdir)/.git)
+
+# git-specific
+CHANGELOG_GIT_FLAGS ?= --stat -M -C --name-status --no-color --no-decorate
+CHANGELOG_GIT_DIR ?= $(top_srcdir)/.git
+GIT = git
+
+ifeq ($(CHANGELOG_START),)
+CHANGELOG_GIT_RANGE =
+else
+CHANGELOG_GIT_RANGE = $(CHANGELOG_START)..
+endif
+
+# Generate a ChangeLog in $(top_distdir)
+dist-ChangeLog:
+	$(AM_V_GEN)if $(GIT) \
+		--git-dir=$(CHANGELOG_GIT_DIR) --work-tree=$(top_srcdir) log \
+		$(CHANGELOG_GIT_FLAGS) $(CHANGELOG_GIT_RANGE) \
+		| fmt --split-only >.ChangeLog.tmp; \
+	then mv -f .ChangeLog.tmp "ChangeLog"; \
+	else rm -f .ChangeLog.tmp; exit 1; fi
+
+.PHONY: dist-ChangeLog
+
+  dist-hook: dist-ChangeLog
+
+
+
+help:
+	-@echo "make                    --> build ccze"
+	-@echo "make clean              --> delete what was built"
+	-@echo "make distclean          --> delete auto tools products"
+	-@echo "make dist               --> build distribution package"
+
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:
+

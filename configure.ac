@@ -42,6 +42,11 @@ AC_PROG_CC
 AC_PROG_CPP
 AC_PROG_INSTALL
 
+# see GNU autoconf archive = perdefined macros
+if test "$build_linux" = "yes"; then
+AX_GENERATE_CHANGELOG
+fi
+
 dnl **********************
 dnl * Headers
 dnl **********************
