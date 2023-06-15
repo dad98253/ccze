@@ -9,7 +9,7 @@ include Rules.mk
 ## -- Private variables -- ##
 EXTRA_DIST	= Rules.mk.in configure configure.ac system.h.in \
 		COPYING install-sh config.guess config.sub \
-		AUTHORS README NEWS INSTALL THANKS ccze.plugins FAQ aclocal.m4
+		AUTHORS README NEWS INSTALL THANKS ccze.plugins FAQ aclocal.m4 ChangeLog
 
 ## -- Generic rules -- ##
 all: all-recursive
