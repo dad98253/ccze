@@ -32,7 +32,9 @@ The simplest way to compile this package is:
      `configure' itself.
 
      Running `configure' takes awhile.  While running, it prints some
-     messages telling which features it is checking for.
+     messages telling which features it is checking for. Watch for errors
+     indicating missing libraries. (Hint: on ubuntu you will likely need
+     to install the pcre library [sudo apt install libpcre3-dev]).
 
   2. Type `make' to compile the package.
 
